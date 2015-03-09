@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 1111fc978b2be834188915a71b1aa4c5
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
+  - setMaterial: {instanceID: 0}
+  - P1Camera: {instanceID: 0}
+  - P2Camera: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
