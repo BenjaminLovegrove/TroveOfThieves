@@ -23,7 +23,8 @@ public class s_ButtonUI : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		SpellsButtonGUI ();
+		if(EventManager.playerTurnToken != 3)
+			SpellsButtonGUI ();
 		if (!rolledDice && EventManager.playerTurnToken != 3) {
 			if (GUI.Button (new Rect (10, Screen.height / 2 - 37.5f, 75, 75), "Roll Dice")) {
 				rolledDice = true;

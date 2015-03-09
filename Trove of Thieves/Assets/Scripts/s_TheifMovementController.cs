@@ -10,11 +10,16 @@ public class s_TheifMovementController : MonoBehaviour {
 	bool canMove = true;
 	float moveSpeed;
 
+	Vector3 altObjectRot = new Vector3 (0, 180, 0);
+
 	// Use this for initialization
 	void Start () {
 		newPos = transform.position;
 		canMove = false;
 		EventManager = (s_EventManager)GameObject.Find ("EventManager").GetComponent <s_EventManager> ();
+		if (this.gameObject.tag == "P1Theif") {
+			transform.eulerAngles = altObjectRot;
+		}
 	}
 	
 	// Update is called once per frame
