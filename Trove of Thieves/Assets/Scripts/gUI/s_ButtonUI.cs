@@ -30,9 +30,11 @@ public class s_ButtonUI : MonoBehaviour {
 				EventManager.RollDicePressed ();
 			}
 		}
-		if (GUI.Button (new Rect (Screen.width - 85, Screen.height / 2 - 37.5f, 75, 75), "End Turn")) {
-			EventManager.EndTurnPressed ();
-			rolledDice = false;
+		if (EventManager.playerTurnToken != 3) {
+			if (GUI.Button (new Rect (Screen.width - 85, Screen.height / 2 - 37.5f, 75, 75), "End Turn")) {
+				EventManager.EndTurnPressed ();
+				rolledDice = false;
+			}
 		}
 	}
 
