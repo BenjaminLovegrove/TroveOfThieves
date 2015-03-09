@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 931d889191a4aef4ba29c3cea420e064
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - gameLogo: {fileID: 2800000, guid: 5812415716d4a3840ac79d16c691e516, type: 3}
+  - companyLogo: {fileID: 2800000, guid: 5acfae1facafb334fa643c0ed82b8620, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
