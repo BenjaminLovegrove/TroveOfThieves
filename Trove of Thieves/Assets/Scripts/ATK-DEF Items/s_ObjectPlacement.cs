@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class s_ObjectPlacement : MonoBehaviour {
@@ -51,6 +51,8 @@ public class s_ObjectPlacement : MonoBehaviour {
 				if (mouseCollider.collider.tag == "P2Ground" && destroyTrigger == 2) {
 					MoveObjectToMouse();
 				}
+			} else if (Input.GetMouseButtonDown (0)){
+				Destroy (this.gameObject);
 			}
 		}
 	}
@@ -60,20 +62,20 @@ public class s_ObjectPlacement : MonoBehaviour {
 		transform.position = newPos;
 		if (Input.GetMouseButtonDown (0)){
 			if (mouseCollider.collider.tag == "P1Ground" && destroyTrigger == 1) {
-				if (EventManager.playerOneGold < itemCost){
+				if (EventManager.playerOneAP < itemCost){
 					Camera.main.audio.clip = noGoldAudio;
 					Camera.main.audio.Play ();
 				} else {
-					EventManager.playerOneGold -= itemCost;
+					EventManager.playerOneAP -= itemCost;
 					PlaceObject();
 				}
 			}
 			if (mouseCollider.collider.tag == "P2Ground" && destroyTrigger == 2) {
-				if (EventManager.playerTwoGold < itemCost){
+				if (EventManager.playerTwoAP < itemCost){
 					Camera.main.audio.clip = noGoldAudio;
 					Camera.main.audio.Play ();
 				} else {
-					EventManager.playerTwoGold -= itemCost;
+					EventManager.playerTwoAP -= itemCost;
 					PlaceObject();
 				}
 			} 

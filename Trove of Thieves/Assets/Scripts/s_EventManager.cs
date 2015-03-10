@@ -16,8 +16,8 @@ public class s_EventManager : MonoBehaviour {
 	// A way to allow other scripts to refrence above Enum
 	public int playerTurnToken;
 
-	//Handles Player Gold
-	public int playerOneGold, playerTwoGold;
+	//Handles Player Action Points
+	public int playerOneAP, playerTwoAP;
 	public Text playerOneGoldText, playerTwoGoldText;
 	public Text playerOneTurnText, playerTwoTurnText;
 
@@ -36,8 +36,8 @@ public class s_EventManager : MonoBehaviour {
 		TheifManager = this.gameObject.GetComponent<s_TheifManager> ();
 		//Sets To Default
 		playerTurn = EnumState.playerOne;
-		playerOneGold = 0;
-		playerTwoGold = 0;
+		playerOneAP = 0;
+		playerTwoAP = 0;
 		playerTurnToken = 1;
 	}
 	
@@ -49,8 +49,8 @@ public class s_EventManager : MonoBehaviour {
 
 	void GoldUpdate(){
 		// Updates Player Gold Text
-		playerOneGoldText.text = ("AP: " + playerOneGold);
-		playerTwoGoldText.text = ("AP: " + playerTwoGold);
+		playerOneGoldText.text = ("AP: " + playerOneAP);
+		playerTwoGoldText.text = ("AP: " + playerTwoAP);
 	}
 
 	// Displays Player Turn
@@ -107,12 +107,12 @@ public class s_EventManager : MonoBehaviour {
 		// Checks Whos Turn It Is,
 		// Updates Player Gold When Button Pressed
 		if (playerTurn == EnumState.playerOne) {
-			playerOneGold += Random.Range (1,7);
-			playerOneGold += Random.Range (1,7);
+			playerOneAP += Random.Range (1,7);
+			playerOneAP += Random.Range (1,7);
 		}
 		else if (playerTurn == EnumState.playerTwo) {
-			playerTwoGold += Random.Range (1,7);
-			playerTwoGold += Random.Range (1,7);
+			playerTwoAP += Random.Range (1,7);
+			playerTwoAP += Random.Range (1,7);
 		}
 	}
 

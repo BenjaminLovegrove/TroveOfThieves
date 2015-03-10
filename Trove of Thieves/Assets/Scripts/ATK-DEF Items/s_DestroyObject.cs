@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class s_DestroyObject : MonoBehaviour {
@@ -65,21 +65,21 @@ public class s_DestroyObject : MonoBehaviour {
 				// If == then checks whos turn it is and actions accordingly
 				if (leftClick.collider.tag == targetObject){
 					if (EventManager.playerTurnToken == 1) {
-						if (EventManager.playerOneGold < itemCost){
+						if (EventManager.playerOneAP < itemCost){
 							Camera.main.audio.clip = noGoldAudio;
 							Camera.main.audio.Play ();
 						} else {
-							EventManager.playerOneGold -= itemCost;
+							EventManager.playerOneAP -= itemCost;
 							Destroy (leftClick.collider.gameObject);
 							Destroy (this.gameObject);
 						}
 					}
 					if (EventManager.playerTurnToken == 2) {
-						if (EventManager.playerTwoGold < itemCost){
+						if (EventManager.playerTwoAP < itemCost){
 							Camera.main.audio.clip = noGoldAudio;
 							Camera.main.audio.Play ();
 						} else {
-							EventManager.playerTwoGold -= itemCost;
+							EventManager.playerTwoAP -= itemCost;
 							Destroy (leftClick.collider.gameObject);
 							Destroy (this.gameObject);
 						}
