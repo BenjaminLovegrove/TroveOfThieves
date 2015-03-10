@@ -73,7 +73,6 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
-    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &11618918
 GameObject:
@@ -845,7 +844,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -47.4099998, y: -.889999986}
+  m_AnchoredPosition: {x: -38.5999985, y: -.899999976}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &216848842
@@ -1789,7 +1788,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -55.8199997, y: -.889999986}
+  m_AnchoredPosition: {x: -47, y: -.899999976}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &385974979
@@ -2463,8 +2462,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -61.5800018, y: -41.1599998}
-  m_SizeDelta: {x: 381.899994, y: 84.3000031}
+  m_AnchoredPosition: {x: -60.0600014, y: -41.1599998}
+  m_SizeDelta: {x: 500, y: 84.3000031}
   m_Pivot: {x: .5, y: .5}
 --- !u!1 &669471778
 GameObject:
@@ -3151,8 +3150,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 794557820}
-  m_LocalRotation: {x: .382683486, y: 0, z: 0, w: .923879564}
-  m_LocalPosition: {x: .100000001, y: 25.3999996, z: -20.2999992}
+  m_LocalRotation: {x: .30070582, y: 0, z: 0, w: .953716993}
+  m_LocalPosition: {x: .100000001, y: 17.8999996, z: -20.2999992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1038608759}
@@ -3331,8 +3330,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 819581499}
-  m_LocalRotation: {x: .382683486, y: 0, z: 0, w: .923879564}
-  m_LocalPosition: {x: .100000001, y: 23.7000008, z: -18.8999996}
+  m_LocalRotation: {x: .30070582, y: 0, z: 0, w: .953716993}
+  m_LocalPosition: {x: .100000001, y: 16.7000008, z: -18.8999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1047766634}
@@ -3601,6 +3600,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTurnToken: 0
+  playerOneGold: 1000
+  playerTwoGold: 1000
   playerOneAP: 0
   playerTwoAP: 0
   playerOneGoldText: {fileID: 654848854}
@@ -3609,6 +3610,7 @@ MonoBehaviour:
   playerTwoTurnText: {fileID: 1853506167}
   p1MoveAudio: {fileID: 8300000, guid: e25d3cbd463a58e478344e7118149b20, type: 3}
   p2MoveAudio: {fileID: 8300000, guid: 3e119472114ac1041aadb2e87155529f, type: 3}
+  rollDiceAudio: {fileID: 8300000, guid: b9e17a6a9846826478a0c3ccda313e52, type: 3}
 --- !u!4 &894565152
 Transform:
   m_ObjectHideFlags: 0
@@ -4757,7 +4759,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 497622, guid: 5e63df9b2923f544c8fb4c0df3d5590e, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5492406, guid: 5e63df9b2923f544c8fb4c0df3d5590e, type: 2}
       propertyPath: m_IsKinematic
@@ -5290,6 +5292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb541ea9e555e7f4784bbd75d3b8dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
   canMove: 1
 --- !u!65 &1326261277
 BoxCollider:
@@ -6315,6 +6318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb541ea9e555e7f4784bbd75d3b8dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
   canMove: 1
 --- !u!65 &1581499412
 BoxCollider:
@@ -6556,7 +6560,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 497622, guid: 5e63df9b2923f544c8fb4c0df3d5590e, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 197622, guid: 5e63df9b2923f544c8fb4c0df3d5590e, type: 2}
       propertyPath: m_TagString
@@ -6703,8 +6707,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  ignoreReversedGraphics: 1
+  blockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -7207,7 +7211,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -38.9700012, y: -.920000017}
+  m_AnchoredPosition: {x: -55.7999992, y: -.899999976}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1841556281
@@ -7321,8 +7325,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -16.0300007, y: -41.0400009}
-  m_SizeDelta: {x: 370.600006, y: 71.5999985}
+  m_AnchoredPosition: {x: -14.3800001, y: -41.0400009}
+  m_SizeDelta: {x: 500, y: 71.5999985}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1846654514
 MonoBehaviour:

@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: cb541ea9e555e7f4784bbd75d3b8dd98
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -272,6 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCost: 0
   noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
+  invalidAudio: {fileID: 0}
+  objPlaceAudio: {fileID: 8300000, guid: 2f1b64889c33f1146b2933b7805c1e0c, type: 3}
   setMaterial: {fileID: 2100000, guid: a56d8ba131e9e1748b4d09e439e45657, type: 2}
   P1Camera: {fileID: 0}
   P2Camera: {fileID: 0}
@@ -289,6 +291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCost: 0
   noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
+  invalidAudio: {fileID: 0}
+  objPlaceAudio: {fileID: 0}
   setMaterial: {fileID: 2100000, guid: a56d8ba131e9e1748b4d09e439e45657, type: 2}
   P1Camera: {fileID: 0}
   P2Camera: {fileID: 0}

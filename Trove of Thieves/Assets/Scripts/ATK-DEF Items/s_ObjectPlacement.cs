@@ -8,6 +8,7 @@ public class s_ObjectPlacement : MonoBehaviour {
 	s_EventManager EventManager;
 	public AudioClip noGoldAudio;
 	public AudioClip invalidAudio;
+	public AudioClip objPlaceAudio;
 
 	Vector3 altObjectRot = new Vector3 (0, 180, 0);
 
@@ -96,6 +97,8 @@ public class s_ObjectPlacement : MonoBehaviour {
 	}
 
 	void PlaceObject(){
+		Camera.main.audio.clip = objPlaceAudio;
+		Camera.main.audio.Play ();
 		gameObject.renderer.material = setMaterial;
 		positionSet = true;
 		gameObject.collider.enabled = true;

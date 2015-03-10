@@ -17,6 +17,8 @@ public class s_EventManager : MonoBehaviour {
 	public int playerTurnToken;
 
 	//Handles Player Action Points
+	public int playerOneGold = 1000;
+	public int playerTwoGold = 1000;
 	public int playerOneAP, playerTwoAP;
 	public Text playerOneGoldText, playerTwoGoldText;
 	public Text playerOneTurnText, playerTwoTurnText;
@@ -25,6 +27,7 @@ public class s_EventManager : MonoBehaviour {
 	AudioSource audioToPlay;
 	public AudioClip p1MoveAudio;
 	public AudioClip p2MoveAudio;
+	public AudioClip rollDiceAudio;
 
 	void Awake(){
 		PlayerTurnTextCheck ();
@@ -49,8 +52,8 @@ public class s_EventManager : MonoBehaviour {
 
 	void GoldUpdate(){
 		// Updates Player Gold Text
-		playerOneGoldText.text = ("AP: " + playerOneAP);
-		playerTwoGoldText.text = ("AP: " + playerTwoAP);
+		playerOneGoldText.text = ("Gold: " +  playerOneGold + "  ||  AP: " + playerOneAP);
+		playerTwoGoldText.text = ("Gold: " +  playerTwoGold + "  ||  AP: " + playerTwoAP);
 	}
 
 	// Displays Player Turn
@@ -71,8 +74,8 @@ public class s_EventManager : MonoBehaviour {
 			playerTurnToken = 2;
 		}
 		else if (playerTurn == EnumState.movePhase) {
-			playerOneTurnText.text = "Theifes Turn!";
-			playerTwoTurnText.text = "Moving x" + TheifManager.moveSteps + "Steps";
+			playerOneTurnText.text = "Thieves Turn!";
+			playerTwoTurnText.text = "Moving x" + TheifManager.moveSteps + " Steps";
 			playerOneTurnText.enabled = true;
 			playerTwoTurnText.enabled = true;
 			playerTurnToken = 3;
@@ -104,6 +107,9 @@ public class s_EventManager : MonoBehaviour {
 	}
 
 	public void RollDicePressed(){
+
+		Camera.main.audio.clip = rollDiceAudio;
+		Camera.main.audio.Play ();
 		// Checks Whos Turn It Is,
 		// Updates Player Gold When Button Pressed
 		if (playerTurn == EnumState.playerOne) {

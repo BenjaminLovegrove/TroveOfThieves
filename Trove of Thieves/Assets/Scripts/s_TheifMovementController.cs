@@ -4,6 +4,7 @@ using System.Collections;
 public class s_TheifMovementController : MonoBehaviour {
 
 	s_EventManager EventManager;
+	public AudioClip thiefDeathAudio;
 
 	Vector3 newPos;
 	Vector3 rayDir = Vector3.left;
@@ -58,6 +59,8 @@ public class s_TheifMovementController : MonoBehaviour {
 			if (hit.collider.tag == "Boulder" || hit.collider.tag == "Barricade"){
 				canMove = false;
 			} else if(hit.collider.tag == "Fire"){
+				Camera.main.audio.clip = thiefDeathAudio;
+				Camera.main.audio.Play ();
 				Destroy (this.gameObject);
 			} else if (hit.collider.tag == "Ice"){
 				if (!touchingIce){
