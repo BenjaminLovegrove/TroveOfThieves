@@ -5875,7 +5875,7 @@ MonoBehaviour:
   rollDiceButton: {fileID: 11618920}
   endTurnButton: {fileID: 433327871}
   atkOBJ1: {fileID: 192316, guid: 3fe6ddbb8c292b1479ebb41c8b3b1da9, type: 2}
-  atkOBJ2: {fileID: 192316, guid: b0bb7550f4074f946b7986283c6fe57a, type: 2}
+  atkOBJ2: {fileID: 156052, guid: c1816da073bbd464799ddce0de3d4b07, type: 2}
   defOBJ1: {fileID: 140002, guid: 90a84411e5cfee9489ef7c59ceb33a8d, type: 2}
   defOBJ2: {fileID: 106394, guid: c082ef6362e894c438884563cfa84efd, type: 2}
   defOBJ3: {fileID: 144210, guid: 3f6f579f874072946947371ab41180c9, type: 2}
