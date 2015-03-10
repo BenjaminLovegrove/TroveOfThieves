@@ -10,6 +10,8 @@ TagManager:
   - Fire
   - P1Theif
   - P2Theif
+  - Barricade
+  - Ice
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

@@ -7,8 +7,9 @@ public class s_TheifMovementController : MonoBehaviour {
 
 	Vector3 newPos;
 	Vector3 rayDir = Vector3.left;
-	bool canMove = true;
-	float moveSpeed;
+	public bool canMove = true;
+	bool touchingIce = false;
+	float moveSpeed = 1;
 
 	Vector3 altObjectRot = new Vector3 (0, 180, 0);
 
@@ -25,32 +26,28 @@ public class s_TheifMovementController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		CollisionDetection ();
-		/*
-		//Stops the theifs from moving outside of turn.
-		if (EventManager.playerTurnToken != 3) {
-			canMove = false;
-		} else { canMove = true; }
-		*/
 		//Sets the direction and lerps Theif when allowed to move
 		if (canMove){
 			if (this.gameObject.tag == "P1Theif"){
 				transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime);
 				rayDir = Vector3.right;
 			}
-
+			
 			if (this.gameObject.tag == "P2Theif"){
-				transform.position = Vector3.MoveTowards (transform.position, newPos, -moveSpeed * Time.deltaTime);
+				transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime);
 				rayDir = Vector3.left;
-
 			}
 		}
+		if (EventManager.playerTurnToken != 3)
+			touchingIce = false;
 
 	}
 	/* This calculates a speed based on the distance needed to cover and the steps
 	 * Also sets the position to lerp to and sets the players move ability to true */
 	void DoMove(int steps){
-		newPos = transform.position + -Vector3.left * steps;
-		moveSpeed = steps / (Vector3.Distance (transform.position, newPos));
+		moveSpeed = 1;
+		//moveSpeed = steps / (Vector3.Distance (transform.position, newPos));
+		newPos = transform.position + Vector3.right * steps;
 		canMove = true;
 	}
 	
@@ -58,13 +55,21 @@ public class s_TheifMovementController : MonoBehaviour {
 		RaycastHit hit;
 		// This is to detect objects in front of the thief, here we can make decitions based on object.
 		if (Physics.Raycast (transform.position, rayDir, out hit, 0.5f)) {
-			if (hit.collider.tag == "Boulder"){
+			if (hit.collider.tag == "Boulder" || hit.collider.tag == "Barricade"){
 				canMove = false;
 			} else if(hit.collider.tag == "Fire"){
 				Destroy (this.gameObject);
+			} else if (hit.collider.tag == "Ice"){
+				if (!touchingIce){
+					touchingIce = true;
+					float x = Mathf.Abs (transform.position.x) - Mathf.Abs (newPos.x);
+					newPos = new Vector3(newPos.x + x /2, newPos.y, newPos.z);
+					moveSpeed = 0.5f;
+				}
 			}
 			else {
 				canMove = true;
+				touchingIce = false;
 			}
 		}
 	}

@@ -8,35 +8,23 @@ public class s_ButtonUI : MonoBehaviour {
 	bool rolledDice = false;
 
 	public Button rollDiceButton, endTurnButton;
-//	public Button atk1, atk2, atk3, atk4, atk5, atk6;
-//	public Button def1, def2, def3, def4, def5, def6;
 
-	//public Texture atk1, atk2, atk3, atk4, atk5, atk6;
-	//public Texture def1, def2, def3, def4, def5, def6;
 	public GameObject atkOBJ1, atkOBJ2;
-	public GameObject defOBJ1, defOBJ2;
+	public GameObject defOBJ1, defOBJ2, defOBJ3, defOBJ4;
 	Vector3 objSpawn = new Vector3(100, 100, 100);
 
+	public GameObject theifOBJ;
+	GameObject thiefSpawn;
 	// Use this for initialization
 	void Start () {
 		EventManager = (s_EventManager)GameObject.Find ("EventManager").GetComponent <s_EventManager> ();
-		GetGuiElements ();
 	}
 
-	void GetGuiElements(){
-		//rollDice = GetComponent<Button> ();
-
-	}
-	
 	// Update is called once per frame
 	void Update () {
 		UnityGuiController ();
 	}
 
-	void OnGUI(){
-		//if(EventManager.playerTurnToken != 3)
-		//	SpellsButtonGUI ();
-	}
 	/* This will handle weather or not a button is visible/active or not */
 	void UnityGuiController(){
 		if (!rolledDice && EventManager.playerTurnToken != 3) {
@@ -74,57 +62,58 @@ public class s_ButtonUI : MonoBehaviour {
 			Instantiate (atkOBJ1, objSpawn, defOBJ1.transform.rotation);
 		if (buttonName == "ATK2")
 			Instantiate (atkOBJ2, objSpawn, defOBJ1.transform.rotation);
+		if (buttonName == "ATK3")
+			SpawnThiefs ();
 
 		//Defence Spells
 		if (buttonName == "DEF1")
 			Instantiate (defOBJ1, objSpawn, defOBJ1.transform.rotation);
 		if (buttonName == "DEF2")
 			Instantiate (defOBJ2, objSpawn, defOBJ1.transform.rotation);
+		if (buttonName == "DEF3")
+			Instantiate (defOBJ3, objSpawn, defOBJ1.transform.rotation);
+		if (buttonName == "DEF4")
+			Instantiate (defOBJ4, objSpawn, defOBJ1.transform.rotation);
+
 	}
 
-	/*
-	//Soon to be depreciated and converted to UI system
-	void SpellsButtonGUI(){
-		//Def Spells
-		if (GUI.Button (new Rect (Screen.width / 2 - 85 * 6, Screen.height / 2 - 37.5f, 75, 75), atk1)) {
-			Instantiate (atkOBJ1, objSpawn, defOBJ1.transform.rotation);
+	void SpawnThiefs(){
+		if (EventManager.playerTurnToken == 1) {
+			Vector3 spawnRange = new Vector3(37, 3.2f,(Random.Range (-22,-36)));
+			Vector3 hitPoint = new Vector3 (spawnRange.x, 6, spawnRange.z);
+			RaycastHit hit;
+			if (Physics.Raycast(hitPoint, -Vector3.up, out hit, 2.8f)){
+				if (hit.collider.tag == "P2Theif"){
+					print ("Already There");
+				} 
+			}else {
+				thiefSpawn = (GameObject)Instantiate (theifOBJ, spawnRange, theifOBJ.transform.rotation);
+				thiefSpawn.tag = "P1Theif";
+			}
+
+
+		} else if (EventManager.playerTurnToken == 2) {
+			Vector3 spawnRange = new Vector3(23, 3.2f,(Random.Range (-22,-36)));
+			Vector3 hitPoint = new Vector3 (spawnRange.x, 6, spawnRange.z);
+			RaycastHit hit;
+			if (Physics.Raycast(hitPoint, -Vector3.up, out hit, 2.8f)){
+				if (hit.collider.tag == "P2Theif"){
+					print ("Already There");
+				} 
+			}else {
+				thiefSpawn = (GameObject)Instantiate (theifOBJ, spawnRange, theifOBJ.transform.rotation);
+				thiefSpawn.tag = "P2Theif";
+			}
 		}
-		if (GUI.Button (new Rect (Screen.width / 2 - 85 * 5, Screen.height / 2 - 37.5f, 75, 75), atk2)) {
-			Instantiate (atkOBJ2, objSpawn, defOBJ1.transform.rotation);
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 - 85 * 4, Screen.height / 2 - 37.5f, 75, 75), atk3)) {
-			
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 - 85 * 3, Screen.height / 2 - 37.5f, 75, 75), atk4)) {
-			
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 - 85 * 2, Screen.height / 2 - 37.5f, 75, 75), atk5)) {
-			
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 - 85, Screen.height / 2 - 37.5f, 75, 75), atk6)) {
-			
-		}
-		
-		//Atk Spells
-		if (GUI.Button (new Rect (Screen.width / 2 + 10, Screen.height / 2 - 37.5f, 75, 75), def1)) {
-			Instantiate (defOBJ1, objSpawn, defOBJ1.transform.rotation);
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 + 85 * 1 + 10, Screen.height / 2 - 37.5f, 75, 75), def2)) {
-			Instantiate (defOBJ2, objSpawn, defOBJ2.transform.rotation);
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 + 85 * 2 + 10, Screen.height / 2 - 37.5f, 75, 75), def3)) {
-			
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 + 85 * 3 + 10, Screen.height / 2 - 37.5f, 75, 75), def4)) {
-			
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 + 85 * 4 + 10, Screen.height / 2 - 37.5f, 75, 75), def5)) {
-			
-		}
-		if (GUI.Button (new Rect (Screen.width / 2 + 85 * 5 + 10, Screen.height / 2 - 37.5f, 75, 75), def6)) {
-			
-		}
-		
 	}
-	*/
 }
+
+
+
+
+
+
+
+
+
+
