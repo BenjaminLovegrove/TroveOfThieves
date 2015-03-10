@@ -4,6 +4,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
+  - invalidAudio: {fileID: 8300000, guid: 2651cc6e31e017646b362c542caba720, type: 3}
   - setMaterial: {instanceID: 0}
   - P1Camera: {instanceID: 0}
   - P2Camera: {instanceID: 0}

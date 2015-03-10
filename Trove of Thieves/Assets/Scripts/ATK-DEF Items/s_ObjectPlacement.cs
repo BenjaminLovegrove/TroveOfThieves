@@ -7,6 +7,9 @@ public class s_ObjectPlacement : MonoBehaviour {
 
 	s_EventManager EventManager;
 	public AudioClip noGoldAudio;
+	public AudioClip invalidAudio;
+
+	Vector3 altObjectRot = new Vector3 (0, 180, 0);
 
 	// Used For moving and placing OBJ
 	RaycastHit mouseCollider;
@@ -29,6 +32,7 @@ public class s_ObjectPlacement : MonoBehaviour {
 			destroyTrigger = 1;
 			detectionCamera = P1Camera;
 		} else if (EventManager.playerTurnToken == 2) {
+			transform.eulerAngles = altObjectRot;
 			destroyTrigger = 2;
 			detectionCamera = P2Camera;
 		}
@@ -49,14 +53,6 @@ public class s_ObjectPlacement : MonoBehaviour {
 				}
 			}
 		}
-		/* Can Be Used To Remove Object By Right Clicking
-		if (positionSet) {
-			if (Input.GetMouseButtonDown (1)) {
-				RaycastHit mouseClick;
-				Ray ray = detectionCamera.ScreenPointToRay (Input.mousePosition);
-				if (Physics.Raycast (ray, out mouseClick, 1000)) {
-					if (mouseClick.collider.gameObject.name == gameObject.name) {
-						Destroy (mouseClick.collider.gameObject);}}}}*/
 	}
 
 	void MoveObjectToMouse(){
@@ -80,7 +76,16 @@ public class s_ObjectPlacement : MonoBehaviour {
 					EventManager.playerTwoGold -= itemCost;
 					PlaceObject();
 				}
+			} 
+
+			/*else (mouseCollider.collider.tag != "Boulder") {
+				print ("" + mouseCollider.collider.tag); 
+				Camera.main.audio.clip = invalidAudio;
+				Camera.main.audio.Play ();
+			} else {
+				print ("" + mouseCollider.collider.tag); 
 			}
+			*/
 		}
 		//Allow player to cancel placement
 		if (Input.GetMouseButtonDown (1)) {
