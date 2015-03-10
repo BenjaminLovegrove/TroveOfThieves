@@ -8,9 +8,11 @@ public class s_ButtonUI : MonoBehaviour {
 	bool rolledDice = false;
 
 	public Button rollDiceButton, endTurnButton;
+//	public Button atk1, atk2, atk3, atk4, atk5, atk6;
+//	public Button def1, def2, def3, def4, def5, def6;
 
-	public Texture atk1, atk2, atk3, atk4, atk5, atk6;
-	public Texture def1, def2, def3, def4, def5, def6;
+	//public Texture atk1, atk2, atk3, atk4, atk5, atk6;
+	//public Texture def1, def2, def3, def4, def5, def6;
 	public GameObject atkOBJ1, atkOBJ2;
 	public GameObject defOBJ1, defOBJ2;
 	Vector3 objSpawn = new Vector3(100, 100, 100);
@@ -32,8 +34,8 @@ public class s_ButtonUI : MonoBehaviour {
 	}
 
 	void OnGUI(){
-		if(EventManager.playerTurnToken != 3)
-			SpellsButtonGUI ();
+		//if(EventManager.playerTurnToken != 3)
+		//	SpellsButtonGUI ();
 	}
 	/* This will handle weather or not a button is visible/active or not */
 	void UnityGuiController(){
@@ -51,6 +53,7 @@ public class s_ButtonUI : MonoBehaviour {
 	 * A function is then called for simple UI and Spell items based on message string */
 	public void UnityUI(string buttonName){
 		TurnControllingUI (buttonName);
+		SpellButtonUI (buttonName);
 	}
 
 	/* This part will handle the Roll Dice and End Turn Buttons */
@@ -65,7 +68,21 @@ public class s_ButtonUI : MonoBehaviour {
 		}
 	}
 
+	void SpellButtonUI(string buttonName){
+		//Atttack Spells
+		if (buttonName == "ATK1")
+			Instantiate (atkOBJ1, objSpawn, defOBJ1.transform.rotation);
+		if (buttonName == "ATK2")
+			Instantiate (atkOBJ2, objSpawn, defOBJ1.transform.rotation);
 
+		//Defence Spells
+		if (buttonName == "DEF1")
+			Instantiate (defOBJ1, objSpawn, defOBJ1.transform.rotation);
+		if (buttonName == "DEF2")
+			Instantiate (defOBJ2, objSpawn, defOBJ1.transform.rotation);
+	}
+
+	/*
 	//Soon to be depreciated and converted to UI system
 	void SpellsButtonGUI(){
 		//Def Spells
@@ -109,4 +126,5 @@ public class s_ButtonUI : MonoBehaviour {
 		}
 		
 	}
+	*/
 }
