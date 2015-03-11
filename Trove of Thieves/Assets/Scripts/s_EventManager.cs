@@ -52,8 +52,8 @@ public class s_EventManager : MonoBehaviour {
 
 	void GoldUpdate(){
 		// Updates Player Gold Text
-		playerOneGoldText.text = ("Gold: " +  playerOneGold + "  ||  AP: " + playerOneAP);
-		playerTwoGoldText.text = ("Gold: " +  playerTwoGold + "  ||  AP: " + playerTwoAP);
+		playerOneGoldText.text = ("AP: " + playerOneAP);
+		playerTwoGoldText.text = ("AP: " + playerTwoAP);
 	}
 
 	// Displays Player Turn

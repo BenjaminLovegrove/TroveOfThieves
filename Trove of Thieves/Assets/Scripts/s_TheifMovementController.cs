@@ -62,6 +62,7 @@ public class s_TheifMovementController : MonoBehaviour {
 				Camera.main.audio.clip = thiefDeathAudio;
 				Camera.main.audio.Play ();
 				Destroy (this.gameObject);
+				Destroy (hit.collider.gameObject, 0.5f);
 			} else if (hit.collider.tag == "Ice"){
 				if (!touchingIce){
 					touchingIce = true;
