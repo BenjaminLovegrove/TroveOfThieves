@@ -1601,7 +1601,7 @@ Transform:
   m_Children:
   - {fileID: 285915467}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!54 &319718554
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4766,7 +4766,7 @@ Transform:
   m_Children:
   - {fileID: 150640855}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!54 &1295233383
 Rigidbody:
   m_ObjectHideFlags: 0
