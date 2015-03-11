@@ -70,6 +70,8 @@ public class s_TheifMovementController : MonoBehaviour {
 					newPos = new Vector3(newPos.x + x /2, newPos.y, newPos.z);
 					moveSpeed = 0.5f;
 				}
+			} else if (hit.collider.tag == "GoldPile"){
+				print ("GOLD!");
 			}
 			else {
 				canMove = true;

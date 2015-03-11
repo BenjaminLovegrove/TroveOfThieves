@@ -27,14 +27,22 @@ public class s_ButtonUI : MonoBehaviour {
 
 	/* This will handle weather or not a button is visible/active or not */
 	void UnityGuiController(){
+		Text rollText = rollDiceButton.GetComponentInChildren<Text>();
+		Text endText = endTurnButton.GetComponentInChildren<Text>();
 		if (!rolledDice && EventManager.playerTurnToken != 3) {
-			rollDiceButton.gameObject.SetActive (true);
-		} else { rollDiceButton.gameObject.SetActive (false); }
-
+			rollDiceButton.interactable = true;
+			rollText.text = "Roll";
+		} else { 
+			rollDiceButton.interactable = false; 
+			rollText.text = ". . .";
+		}
 		if (EventManager.playerTurnToken != 3) {
-			endTurnButton.gameObject.SetActive (true);
-		} else { endTurnButton.gameObject.SetActive (false); }
-
+			endTurnButton.interactable = true;
+			endText.text = "End";
+		} else { 
+			endTurnButton.interactable = false;
+			endText.text = ". . .";
+		}
 	}
 
 	/*Upon a UI button being press, the fuction will be called

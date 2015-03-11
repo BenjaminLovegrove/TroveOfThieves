@@ -80,15 +80,6 @@ public class s_ObjectPlacement : MonoBehaviour {
 					PlaceObject();
 				}
 			} 
-
-			/*else (mouseCollider.collider.tag != "Boulder") {
-				print ("" + mouseCollider.collider.tag); 
-				Camera.main.audio.clip = invalidAudio;
-				Camera.main.audio.Play ();
-			} else {
-				print ("" + mouseCollider.collider.tag); 
-			}
-			*/
 		}
 		//Allow player to cancel placement
 		if (Input.GetMouseButtonDown (1)) {

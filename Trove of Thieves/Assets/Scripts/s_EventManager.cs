@@ -20,7 +20,8 @@ public class s_EventManager : MonoBehaviour {
 	public int playerOneGold = 1000;
 	public int playerTwoGold = 1000;
 	public int playerOneAP, playerTwoAP;
-	public Text playerOneGoldText, playerTwoGoldText;
+	public Text playerOneAPText, playerTwoAPText;
+	public Text playerOneGoldGUI, playerTwoGoldGUI;
 	public Text playerOneTurnText, playerTwoTurnText;
 
 	//Handles Some Audio
@@ -48,12 +49,14 @@ public class s_EventManager : MonoBehaviour {
 	void Update () {
 		GoldUpdate ();
 		PlayerTurnTextCheck ();
+		playerOneGoldGUI.text = (playerOneGold + " Gold");
+		playerTwoGoldGUI.text = (playerTwoGold + " Gold");
 	}
 
 	void GoldUpdate(){
 		// Updates Player Gold Text
-		playerOneGoldText.text = ("AP: " + playerOneAP);
-		playerTwoGoldText.text = ("AP: " + playerTwoAP);
+		playerOneAPText.text = ("AP " + playerOneAP);
+		playerTwoAPText.text = ("AP " + playerTwoAP);
 	}
 
 	// Displays Player Turn
@@ -107,7 +110,6 @@ public class s_EventManager : MonoBehaviour {
 	}
 
 	public void RollDicePressed(){
-
 		Camera.main.audio.clip = rollDiceAudio;
 		Camera.main.audio.Play ();
 		// Checks Whos Turn It Is,
