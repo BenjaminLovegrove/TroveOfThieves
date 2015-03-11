@@ -532,6 +532,7 @@ GameObject:
   - 222: {fileID: 216848844}
   - 114: {fileID: 216848843}
   - 114: {fileID: 216848842}
+  - 114: {fileID: 216848845}
   m_Layer: 5
   m_Name: Atk 2
   m_TagString: Untagged
@@ -637,6 +638,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 216848840}
+--- !u!114 &216848845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216848840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb7f2f77439f30499e9936aecef8a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  cost: 5
 --- !u!1 &234459025
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +907,7 @@ GameObject:
   - 222: {fileID: 269176412}
   - 114: {fileID: 269176411}
   - 114: {fileID: 269176410}
+  - 114: {fileID: 269176413}
   m_Layer: 5
   m_Name: Def 4
   m_TagString: Untagged
@@ -997,6 +1013,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 269176408}
+--- !u!114 &269176413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 269176408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb7f2f77439f30499e9936aecef8a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  cost: 5
 --- !u!1 &271031769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1316,6 +1346,7 @@ GameObject:
   - 222: {fileID: 385974981}
   - 114: {fileID: 385974980}
   - 114: {fileID: 385974979}
+  - 114: {fileID: 385974982}
   m_Layer: 5
   m_Name: Atk 1
   m_TagString: Untagged
@@ -1421,6 +1452,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 385974977}
+--- !u!114 &385974982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385974977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb7f2f77439f30499e9936aecef8a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  cost: 3
 --- !u!1 &512365885
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2149,7 @@ GameObject:
   - 222: {fileID: 778939274}
   - 114: {fileID: 778939273}
   - 114: {fileID: 778939272}
+  - 114: {fileID: 778939275}
   m_Layer: 5
   m_Name: Atk 5
   m_TagString: Untagged
@@ -2209,6 +2255,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 778939270}
+--- !u!114 &778939275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 778939270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb7f2f77439f30499e9936aecef8a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  cost: 8
 --- !u!1 &788890236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3402,6 +3462,7 @@ GameObject:
   - 222: {fileID: 1154226788}
   - 114: {fileID: 1154226787}
   - 114: {fileID: 1154226786}
+  - 114: {fileID: 1154226789}
   m_Layer: 5
   m_Name: Def 2
   m_TagString: Untagged
@@ -3507,6 +3568,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1154226784}
+--- !u!114 &1154226789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1154226784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb7f2f77439f30499e9936aecef8a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  cost: 4
 --- !u!1 &1172491358
 GameObject:
   m_ObjectHideFlags: 0
@@ -5661,6 +5736,7 @@ GameObject:
   - 222: {fileID: 1841556283}
   - 114: {fileID: 1841556282}
   - 114: {fileID: 1841556281}
+  - 114: {fileID: 1841556284}
   m_Layer: 5
   m_Name: Atk 3
   m_TagString: Untagged
@@ -5766,6 +5842,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1841556279}
+--- !u!114 &1841556284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841556279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb7f2f77439f30499e9936aecef8a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  cost: 2
 --- !u!1 &1846654512
 GameObject:
   m_ObjectHideFlags: 0
@@ -6452,6 +6542,7 @@ GameObject:
   - 222: {fileID: 2046936501}
   - 114: {fileID: 2046936500}
   - 114: {fileID: 2046936499}
+  - 114: {fileID: 2046936502}
   m_Layer: 5
   m_Name: Def 1
   m_TagString: Untagged
@@ -6557,6 +6648,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046936497}
+--- !u!114 &2046936502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2046936497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb7f2f77439f30499e9936aecef8a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  cost: 2
 --- !u!1 &2048162705
 GameObject:
   m_ObjectHideFlags: 0
@@ -6699,6 +6804,7 @@ GameObject:
   - 222: {fileID: 2068747961}
   - 114: {fileID: 2068747960}
   - 114: {fileID: 2068747959}
+  - 114: {fileID: 2068747962}
   m_Layer: 5
   m_Name: Def 3
   m_TagString: Untagged
@@ -6804,6 +6910,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068747957}
+--- !u!114 &2068747962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068747957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb7f2f77439f30499e9936aecef8a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventManager: {fileID: 0}
+  thisButton: {fileID: 0}
+  cost: 5
 --- !u!1 &2138608016
 GameObject:
   m_ObjectHideFlags: 0
