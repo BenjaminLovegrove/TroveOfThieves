@@ -72,6 +72,8 @@ public class s_ButtonUI : MonoBehaviour {
 			Instantiate (atkOBJ2, objSpawn, defOBJ1.transform.rotation);
 		if (buttonName == "ATK3")
 			SpawnThiefs ();
+		if (buttonName == "ATK4")
+			StealGoldSpell ();
 
 		//Defence Spells
 		if (buttonName == "DEF1")
@@ -82,7 +84,16 @@ public class s_ButtonUI : MonoBehaviour {
 			Instantiate (defOBJ3, objSpawn, defOBJ1.transform.rotation);
 		if (buttonName == "DEF4")
 			Instantiate (defOBJ4, objSpawn, defOBJ1.transform.rotation);
+	}
 
+	void StealGoldSpell(){
+		if (this.gameObject.tag == "P1Theif") {
+			EventManager.playerOneGold += 100;
+			EventManager.playerTwoGold -= 100;
+		} else {
+			EventManager.playerOneGold -= 100;
+			EventManager.playerTwoGold += 100;
+		}
 	}
 
 	void SpawnThiefs(){

@@ -1,6 +1,15 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ATK-DEF Items\s_ObjectPlacement.cs">
+    <Files>
+      <File FileName="Assets\Scripts\s_TheifMovementController.cs" Line="65" Column="40" />
+      <File FileName="Assets\Scripts\s_TheifManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\s_EventManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\gUI\s_ButtonUI.cs" Line="139" Column="1" />
+      <File FileName="Assets\Scripts\s_TheifAnimation.cs" Line="15" Column="27" />
+      <File FileName="Assets\Scripts\ATK-DEF Items\s_ObjectPlacement.cs" Line="62" Column="64" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

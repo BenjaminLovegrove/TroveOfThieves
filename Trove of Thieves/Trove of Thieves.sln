@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{2BE069F7-73BC-7E03-6413-7B8C81D9C13A}") = "Trove of Thieves", "Assembly-CSharp.csproj", "{B7408A4E-367B-A73D-FE56-8FF54F35CD70}"
 EndProject
+Project("{2BE069F7-73BC-7E03-6413-7B8C81D9C13A}") = "Trove of Thieves", "Assembly-UnityScript.unityproj", "{2FD6E92C-9053-C309-77B1-AA154CEB58E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{B7408A4E-367B-A73D-FE56-8FF54F35CD70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7408A4E-367B-A73D-FE56-8FF54F35CD70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7408A4E-367B-A73D-FE56-8FF54F35CD70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FD6E92C-9053-C309-77B1-AA154CEB58E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FD6E92C-9053-C309-77B1-AA154CEB58E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FD6E92C-9053-C309-77B1-AA154CEB58E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FD6E92C-9053-C309-77B1-AA154CEB58E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																GlobalSection(MonoDevelopProperties) = preSolution
+																																																																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
