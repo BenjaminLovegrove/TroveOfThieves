@@ -58,6 +58,8 @@ public class s_TheifMovementController : MonoBehaviour {
 		if (Physics.Raycast (transform.position, rayDir, out hit, 0.5f)) {
 			if (hit.collider.tag == "Boulder" || hit.collider.tag == "Barricade") {
 				canMove = false;
+			} else if (hit.collider.tag == "P1Theif" || hit.collider.tag == "P2Theif") {
+				canMove = false;
 			} else if (hit.collider.tag == "Fire") {
 				Camera.main.audio.clip = thiefDeathAudio;
 				Camera.main.audio.Play ();

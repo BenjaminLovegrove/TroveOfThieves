@@ -30,6 +30,7 @@ GameObject:
   - 65: {fileID: 6528346}
   - 23: {fileID: 2328346}
   - 114: {fileID: 11428348}
+  - 114: {fileID: 11492376}
   m_Layer: 0
   m_Name: Ice
   m_TagString: Ice
@@ -277,6 +278,18 @@ MonoBehaviour:
   P1Camera: {fileID: 0}
   P2Camera: {fileID: 0}
   destroyTrigger: 0
+--- !u!114 &11492376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d76db9bd1df5a4d8119d1391aaa7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfterTurns: 8
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

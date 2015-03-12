@@ -18,7 +18,7 @@ public class s_CostFade : MonoBehaviour {
 	void Update () {
 	
 		if (EventManager.playerTurnToken == 1) {
-			if (EventManager.playerOneAP > cost){
+			if (EventManager.playerOneAP >= cost){
 				thisButton.interactable = true;
 			} else {
 				thisButton.interactable = false;
@@ -26,7 +26,7 @@ public class s_CostFade : MonoBehaviour {
 		}
 
 		if (EventManager.playerTurnToken == 2) {
-			if (EventManager.playerTwoAP > cost){
+			if (EventManager.playerTwoAP >= cost){
 				thisButton.interactable = true;
 			} else {
 				thisButton.interactable = false;

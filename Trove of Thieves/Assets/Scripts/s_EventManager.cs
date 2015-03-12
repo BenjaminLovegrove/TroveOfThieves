@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class s_EventManager : MonoBehaviour {
 
 	s_TheifManager TheifManager;
+	GameObject[] destroyChecks;
 
 	// Handles Player Turn
 	enum EnumState {
@@ -43,6 +44,8 @@ public class s_EventManager : MonoBehaviour {
 		playerOneAP = 0;
 		playerTwoAP = 0;
 		playerTurnToken = 1;
+		Camera.main.audio.clip = p1MoveAudio;
+		Camera.main.audio.Play ();
 	}
 	
 	// Update is called once per frame
@@ -100,12 +103,22 @@ public class s_EventManager : MonoBehaviour {
 			TheifManager.TheifTurnPhase ();
 		}
 		else if (playerTurn == EnumState.movePhase) {
-
-
 			playerTurn = EnumState.playerOne;
 			Camera.main.audio.clip = p1MoveAudio;
 			Camera.main.audio.Play ();
 
+			destroyChecks = GameObject.FindGameObjectsWithTag ("Boulder");
+			foreach (GameObject destroyCheck in destroyChecks) {
+				destroyCheck.SendMessage ("TurnCheck");
+			}
+			destroyChecks = GameObject.FindGameObjectsWithTag ("Barricade");
+			foreach (GameObject destroyCheck in destroyChecks) {
+				destroyCheck.SendMessage ("TurnCheck");
+			}
+			destroyChecks = GameObject.FindGameObjectsWithTag ("Ice");
+			foreach (GameObject destroyCheck in destroyChecks) {
+				destroyCheck.SendMessage ("TurnCheck");
+			}
 		}
 	}
 

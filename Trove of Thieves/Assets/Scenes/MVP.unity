@@ -3362,9 +3362,9 @@ Camera:
     width: 1
     height: 1
   near clip plane: .300000012
-  far clip plane: 35.5
+  far clip plane: 50
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 7.5
   m_Depth: 0
   m_CullingMask:
@@ -3383,8 +3383,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 819581499}
-  m_LocalRotation: {x: .4226183, y: 0, z: 0, w: .906307817}
-  m_LocalPosition: {x: .100000001, y: 12.8999996, z: -7.80000019}
+  m_LocalRotation: {x: .300705999, y: 0, z: 0, w: .953716934}
+  m_LocalPosition: {x: .100000001, y: 16.7000008, z: -18.9000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1047766634}
@@ -7189,6 +7189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc889cdc8de63419ccd55b9a6fb62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
   rollDiceButton: {fileID: 11618920}
   endTurnButton: {fileID: 1716877717}
   atkOBJ1: {fileID: 192316, guid: 3fe6ddbb8c292b1479ebb41c8b3b1da9, type: 2}

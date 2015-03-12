@@ -7,6 +7,8 @@ public class s_ButtonUI : MonoBehaviour {
 	s_EventManager EventManager;
 	bool rolledDice = false;
 
+	public AudioClip noGoldAudio;
+
 	public Button rollDiceButton, endTurnButton;
 
 	public GameObject atkOBJ1, atkOBJ2;
@@ -87,10 +89,12 @@ public class s_ButtonUI : MonoBehaviour {
 	}
 
 	void StealGoldSpell(){
-		if (this.gameObject.tag == "P1Theif") {
+		if (EventManager.playerTurnToken == 1) {
+			EventManager.playerOneAP -= 8;
 			EventManager.playerOneGold += 100;
 			EventManager.playerTwoGold -= 100;
 		} else {
+			EventManager.playerTwoAP -= 8;
 			EventManager.playerOneGold -= 100;
 			EventManager.playerTwoGold += 100;
 		}
@@ -98,30 +102,34 @@ public class s_ButtonUI : MonoBehaviour {
 
 	void SpawnThiefs(){
 		if (EventManager.playerTurnToken == 1) {
-			Vector3 spawnRange = new Vector3(37, 3.2f,(Random.Range (-22,-36)));
-			Vector3 hitPoint = new Vector3 (spawnRange.x, 6, spawnRange.z);
-			RaycastHit hit;
-			if (Physics.Raycast(hitPoint, -Vector3.up, out hit, 2.8f)){
-				if (hit.collider.tag == "P2Theif"){
-					print ("Already There");
-				} 
-			}else {
-				thiefSpawn = (GameObject)Instantiate (theifOBJ, spawnRange, theifOBJ.transform.rotation);
-				thiefSpawn.tag = "P1Theif";
+			if (EventManager.playerOneAP >= 2){
+				Vector3 spawnRange = new Vector3(37, 3.2f,(Random.Range (-22,-36)));
+				Vector3 hitPoint = new Vector3 (spawnRange.x, 6, spawnRange.z);
+				RaycastHit hit;
+				if (Physics.Raycast(hitPoint, -Vector3.up, out hit, 2.8f)){
+					if (hit.collider.tag == "P2Theif"){
+						print ("Already There");
+					} 
+				}else {
+					thiefSpawn = (GameObject)Instantiate (theifOBJ, spawnRange, theifOBJ.transform.rotation);
+					thiefSpawn.tag = "P1Theif";
+					EventManager.playerOneAP -= 2;
+				}
 			}
-
-
 		} else if (EventManager.playerTurnToken == 2) {
-			Vector3 spawnRange = new Vector3(23, 3.2f,(Random.Range (-22,-36)));
-			Vector3 hitPoint = new Vector3 (spawnRange.x, 6, spawnRange.z);
-			RaycastHit hit;
-			if (Physics.Raycast(hitPoint, -Vector3.up, out hit, 2.8f)){
-				if (hit.collider.tag == "P2Theif"){
-					print ("Already There");
-				} 
-			}else {
-				thiefSpawn = (GameObject)Instantiate (theifOBJ, spawnRange, theifOBJ.transform.rotation);
-				thiefSpawn.tag = "P2Theif";
+			if (EventManager.playerTwoAP >= 2){
+				Vector3 spawnRange = new Vector3(23, 3.2f,(Random.Range (-22,-36)));
+				Vector3 hitPoint = new Vector3 (spawnRange.x, 6, spawnRange.z);
+				RaycastHit hit;
+				if (Physics.Raycast(hitPoint, -Vector3.up, out hit, 2.8f)){
+					if (hit.collider.tag == "P2Theif"){
+						print ("Already There");
+					} 
+				}else {
+					thiefSpawn = (GameObject)Instantiate (theifOBJ, spawnRange, theifOBJ.transform.rotation);
+					thiefSpawn.tag = "P2Theif";
+					EventManager.playerTwoAP -= 2;
+				}
 			}
 		}
 	}
