@@ -64,6 +64,7 @@
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Models\Warrior 2 Swords Greybox\sources\Toon Shading\Toony Gooch RimOutline Hard.shader" />
      <None Include="Assets\Models\Warrior 2 Swords Greybox\sources\Toon Shading\Toony-BasicOutline.shader" />
+     <None Include="Assets\Models\Goblins_Army\Goblin_Bandit\bandit_motiondata.xml" />
      <None Include="Assets\Models\Warrior 2 Swords Greybox\sources\Toon Shading\Toony-LightedOutline.shader" />
      <None Include="Assets\Models\Warrior 2 Swords Greybox\sources\Toon Shading\Toony-Lighted.shader" />
  <Reference Include="UnityEngine.UI">
