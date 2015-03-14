@@ -33,7 +33,7 @@ GameObject:
   - 114: {fileID: 11492376}
   m_Layer: 0
   m_Name: Ice
-  m_TagString: Ice
+  m_TagString: IceCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,8 +272,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemCost: 5
   noGoldAudio: {fileID: 8300000, guid: 2651cc6e31e017646b362c542caba720, type: 3}
-  invalidAudio: {fileID: 0}
+  invalidAudio: {fileID: 8300000, guid: 2651cc6e31e017646b362c542caba720, type: 3}
   objPlaceAudio: {fileID: 8300000, guid: 2f1b64889c33f1146b2933b7805c1e0c, type: 3}
+  fadeoutNull: {fileID: 2100000, guid: 0028a693985b96a4b938d12424e114ad, type: 2}
+  fadeoutFaded: {fileID: 2100000, guid: ee2e61e335b8ddc4e8ccec54a5bbc1b9, type: 2}
   setMaterial: {fileID: 2100000, guid: 964454d6c3e0e9a4b9577a59654dabdd, type: 2}
   P1Camera: {fileID: 0}
   P2Camera: {fileID: 0}

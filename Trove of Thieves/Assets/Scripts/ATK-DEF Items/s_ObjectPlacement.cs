@@ -12,6 +12,10 @@ public class s_ObjectPlacement : MonoBehaviour {
 
 	Vector3 altObjectRot = new Vector3 (0, 180, 0);
 
+	Renderer fadeoutP1, fadeoutP2;
+	public Material fadeoutNull, fadeoutFaded;
+	float fadeSpeed = 7.5f;
+
 	// Used For moving and placing OBJ
 	RaycastHit mouseCollider;
 	bool positionSet = false;
@@ -29,6 +33,8 @@ public class s_ObjectPlacement : MonoBehaviour {
 		EventManager = (s_EventManager)GameObject.Find ("EventManager").GetComponent <s_EventManager> ();
 		P1Camera = (Camera)GameObject.Find ("P1 Camera").GetComponent<Camera>();
 		P2Camera = (Camera)GameObject.Find ("P2 Camera").GetComponent<Camera>();
+		fadeoutP1 = (Renderer)GameObject.Find ("FadeoutP1").GetComponent<Renderer>();
+		fadeoutP2 = (Renderer)GameObject.Find ("FadeoutP2").GetComponent<Renderer>();
 		if (EventManager.playerTurnToken == 1) {
 			destroyTrigger = 1;
 			detectionCamera = P1Camera;
@@ -41,10 +47,14 @@ public class s_ObjectPlacement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
-
-
 		if (!positionSet) {
+			if (EventManager.playerTurnToken == 1){
+				fadeoutP1.material.color = Vector4.Lerp (fadeoutP1.material.color, fadeoutNull.color, fadeSpeed * Time.deltaTime);
+				fadeoutP2.material.color = Vector4.Lerp (fadeoutP2.material.color, fadeoutFaded.color, fadeSpeed * Time.deltaTime);
+			} else {
+				fadeoutP1.material.color = Vector4.Lerp (fadeoutP1.material.color, fadeoutFaded.color, fadeSpeed * Time.deltaTime);
+				fadeoutP2.material.color = Vector4.Lerp (fadeoutP2.material.color, fadeoutNull.color, fadeSpeed * Time.deltaTime);
+			}
 			SetDestroyCheck();
 			Ray ray = detectionCamera.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out mouseCollider, 1000)) {
@@ -55,6 +65,8 @@ public class s_ObjectPlacement : MonoBehaviour {
 					MoveObjectToMouse();
 				}
 			} else if (Input.GetMouseButtonDown (0)){
+				fadeoutP1.material = fadeoutNull;
+				fadeoutP2.material = fadeoutNull;
 				Destroy (this.gameObject);
 			}
 		}
@@ -86,6 +98,8 @@ public class s_ObjectPlacement : MonoBehaviour {
 		//Allow player to cancel placement
 		if (Input.GetMouseButtonDown (1)) {
 			Destroy (this.gameObject);
+			fadeoutP1.material = fadeoutNull;
+			fadeoutP2.material = fadeoutNull;
 		}
 	}
 
@@ -95,6 +109,8 @@ public class s_ObjectPlacement : MonoBehaviour {
 		gameObject.renderer.material = setMaterial;
 		positionSet = true;
 		gameObject.collider.enabled = true;
+		fadeoutP1.material = fadeoutNull;
+		fadeoutP2.material = fadeoutNull;
 	}
 
 	void SetDestroyCheck(){

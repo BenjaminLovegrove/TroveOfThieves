@@ -115,7 +115,7 @@ public class s_EventManager : MonoBehaviour {
 			foreach (GameObject destroyCheck in destroyChecks) {
 				destroyCheck.SendMessage ("TurnCheck");
 			}
-			destroyChecks = GameObject.FindGameObjectsWithTag ("Ice");
+			destroyChecks = GameObject.FindGameObjectsWithTag ("IceCube");
 			foreach (GameObject destroyCheck in destroyChecks) {
 				destroyCheck.SendMessage ("TurnCheck");
 			}
