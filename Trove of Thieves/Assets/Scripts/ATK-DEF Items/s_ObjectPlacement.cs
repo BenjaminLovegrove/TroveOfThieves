@@ -42,6 +42,8 @@ public class s_ObjectPlacement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+
 		if (!positionSet) {
 			SetDestroyCheck();
 			Ray ray = detectionCamera.ScreenPointToRay (Input.mousePosition);
