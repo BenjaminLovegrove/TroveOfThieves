@@ -103,7 +103,7 @@ public class s_ButtonUI : MonoBehaviour {
 	void SpawnThiefs(){
 		if (EventManager.playerTurnToken == 1) {
 			if (EventManager.playerOneAP >= 2){
-				Vector3 spawnRange = new Vector3(37, 3.2f,(Random.Range (-22,-36)));
+				Vector3 spawnRange = new Vector3(37, 3.2f,(Random.Range (-23,-34)));
 				Vector3 hitPoint = new Vector3 (spawnRange.x, 6, spawnRange.z);
 				RaycastHit hit;
 				if (Physics.Raycast(hitPoint, -Vector3.up, out hit, 2.8f)){
@@ -118,7 +118,7 @@ public class s_ButtonUI : MonoBehaviour {
 			}
 		} else if (EventManager.playerTurnToken == 2) {
 			if (EventManager.playerTwoAP >= 2){
-				Vector3 spawnRange = new Vector3(23, 3.2f,(Random.Range (-22,-36)));
+				Vector3 spawnRange = new Vector3(23, 3.2f,(Random.Range (-23,-34)));
 				Vector3 hitPoint = new Vector3 (spawnRange.x, 6, spawnRange.z);
 				RaycastHit hit;
 				if (Physics.Raycast(hitPoint, -Vector3.up, out hit, 2.8f)){
