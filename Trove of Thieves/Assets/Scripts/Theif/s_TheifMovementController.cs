@@ -11,6 +11,7 @@ public class s_TheifMovementController : MonoBehaviour {
 	public bool canMove = true;
 	bool touchingIce = false;
 	float moveSpeed = 1;
+	public bool dead = false;
 
 	Vector3 altObjectRot = new Vector3 (0, 180, 0);
 
@@ -26,21 +27,26 @@ public class s_TheifMovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		CollisionDetection ();
-		//Sets the direction and lerps Theif when allowed to move
-		if (canMove){
-			if (this.gameObject.tag == "P1Theif"){
-				transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime);
-				rayDir = Vector3.right;
-			}
+		if (!dead) {
+			CollisionDetection ();
+			//Sets the direction and lerps Theif when allowed to move
+			if (canMove) {
+				if (this.gameObject.tag == "P1Theif") {
+					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime);
+					rayDir = Vector3.right;
+				}
 			
-			if (this.gameObject.tag == "P2Theif"){
-				transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime);
-				rayDir = Vector3.left;
+				if (this.gameObject.tag == "P2Theif") {
+					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime);
+					rayDir = Vector3.left;
+				}
 			}
-		}
-		if (EventManager.playerTurnToken != 3) {
-			touchingIce = false;
+			if (EventManager.playerTurnToken != 3) {
+				touchingIce = false;
+			}
+		} else {
+			canMove = false;
+			newPos = transform.position;
 		}
 	}
 	/* This calculates a speed based on the distance needed to cover and the steps
@@ -50,11 +56,13 @@ public class s_TheifMovementController : MonoBehaviour {
 		//moveSpeed = steps / (Vector3.Distance (transform.position, newPos));
 		newPos = transform.position + Vector3.right * steps;
 		canMove = true;
+
 	}
 	
 	void CollisionDetection(){
 		RaycastHit hit;
 		// This is to detect objects in front of the thief, here we can make decitions based on object.
+
 		if (Physics.Raycast (transform.position, rayDir, out hit, 0.5f)) {
 			if (hit.collider.tag == "Boulder" || hit.collider.tag == "Barricade") {
 				canMove = false;
@@ -63,7 +71,8 @@ public class s_TheifMovementController : MonoBehaviour {
 			} else if (hit.collider.tag == "Fire") {
 				Camera.main.audio.clip = thiefDeathAudio;
 				Camera.main.audio.Play ();
-				Destroy (this.gameObject);
+				dead = true;
+				Destroy (this.gameObject, 1f);
 				Destroy (hit.collider.gameObject, 1f);
 			} else if (hit.collider.tag == "Ice") {
 				if (!touchingIce) {
@@ -79,13 +88,15 @@ public class s_TheifMovementController : MonoBehaviour {
 				touchingIce = false;
 			}
 		} 
-		// The check here has to be here because if its in update
-		// It will override any CollissionDetetion() decisions
+
+			// The check here has to be here because if its in update
+			// It will override any CollissionDetetion() decisions
 		else if (EventManager.playerTurnToken != 3) {
 			canMove = false;
 		} else {
 			canMove = true;
 		}
+		
 	}
 
 	void CollectGold(){

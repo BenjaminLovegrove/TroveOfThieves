@@ -36,11 +36,11 @@ public class s_TheifManager : MonoBehaviour {
 		moveSteps = Random.Range (2, 13);
 		theifSpawns = GameObject.FindGameObjectsWithTag ("P1Theif");
 		foreach (GameObject theifSpawn in theifSpawns) {
-			theifSpawn.SendMessage ("DoMove", moveSteps);
+			theifSpawn.SendMessage ("DoMove", moveSteps, SendMessageOptions.DontRequireReceiver);
 		}
 		theifSpawns = GameObject.FindGameObjectsWithTag ("P2Theif");
 		foreach (GameObject theifSpawn in theifSpawns) {
-			theifSpawn.SendMessage ("DoMove", -moveSteps);
+			theifSpawn.SendMessage ("DoMove", -moveSteps, SendMessageOptions.DontRequireReceiver);
 		}
 		isMovementTurn = true;
 	}
