@@ -1,17 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Theif\s_TheifMovementController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ATK-DEF Items\s_TurnDestroy.cs">
     <Files>
-      <File FileName="Assets\Scripts\gUI\s_ButtonUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Theif\s_AnimMovementFix.cs" Line="15" Column="97" />
+      <File FileName="Assets\Scripts\gUI\s_ButtonUI.cs" Line="115" Column="33" />
       <File FileName="Assets\Scripts\gUI\s_TooltipUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\gUI\s_MainMenu.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ATK-DEF Items\s_ObjectPlacement.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\s_EventManager.cs" Line="108" Column="30" />
+      <File FileName="Assets\Scripts\s_EventManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ATK-DEF Items\s_TurnDestroy.cs" Line="24" Column="1" />
-      <File FileName="Assets\Scripts\Theif\s_TheifAnimation.cs" Line="20" Column="1" />
+      <File FileName="Assets\Scripts\Theif\s_TheifAnimation.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Theif\s_TheifMovementController.cs" Line="40" Column="45" />
-      <File FileName="Assets\Scripts\Theif\s_GBTheifAnim.cs" Line="26" Column="32" />
-      <File FileName="Assets\Scripts\Theif\s_TheifManager.cs" Line="43" Column="88" />
+      <File FileName="Assets\Scripts\Theif\s_GBTheifAnim.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Theif\s_TheifManager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
