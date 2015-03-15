@@ -802,7 +802,7 @@ MonoBehaviour:
   itemCost: 4
   noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
   invalidAudio: {fileID: 8300000, guid: 2651cc6e31e017646b362c542caba720, type: 3}
-  objPlaceAudio: {fileID: 8300000, guid: 2f1b64889c33f1146b2933b7805c1e0c, type: 3}
+  objPlaceAudio: {fileID: 8300000, guid: baee03fb8fdb2e9449712a1e4ce3c155, type: 3}
   fadeoutNull: {fileID: 2100000, guid: 0028a693985b96a4b938d12424e114ad, type: 2}
   fadeoutFaded: {fileID: 2100000, guid: ee2e61e335b8ddc4e8ccec54a5bbc1b9, type: 2}
   setMaterial: {fileID: 2100000, guid: f0305758d9596d64283793406a71b286, type: 2}

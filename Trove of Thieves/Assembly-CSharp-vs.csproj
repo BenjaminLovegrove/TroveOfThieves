@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\gUI\s_TooltipUI.cs" />
      <Compile Include="Assets\Scripts\gUI\s_WinManager.cs" />
      <Compile Include="Assets\Scripts\s_EventManager.cs" />
+     <Compile Include="Assets\Scripts\s_StopDestroy.cs" />
      <None Include="Assets\Models\Warrior 2 Swords Greybox\sources\Toon Shading\Toony-Basic.shader" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Models\Warrior 2 Swords Greybox\sources\Toon Shading\Toony Gooch RimOutline Hard.shader" />
