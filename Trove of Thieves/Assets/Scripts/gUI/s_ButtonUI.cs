@@ -14,6 +14,7 @@ public class s_ButtonUI : MonoBehaviour {
 	public GameObject atkOBJ1, atkOBJ2;
 	public GameObject defOBJ1, defOBJ2, defOBJ3, defOBJ4;
 	Vector3 objSpawn = new Vector3(100, 100, 100);
+	public Texture UIBackdrop;
 
 	public GameObject theifOBJ;
 	GameObject thiefSpawn;
@@ -132,6 +133,10 @@ public class s_ButtonUI : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void OnGUI(){
+
 	}
 }
 
