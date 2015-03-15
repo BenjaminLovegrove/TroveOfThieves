@@ -6265,6 +6265,7 @@ GameObject:
   - 95: {fileID: 414766882}
   - 54: {fileID: 414766881}
   - 65: {fileID: 414766883}
+  - 114: {fileID: 414766879}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -6292,6 +6293,18 @@ Transform:
   - {fileID: 1503515649}
   m_Father: {fileID: 1926764289}
   m_RootOrder: 0
+--- !u!114 &414766879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11468288, guid: 4a87106612ac385468f68e3b48968fb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1390533561}
+  m_GameObject: {fileID: 414766877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &414766881
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6516,6 +6529,7 @@ GameObject:
   - 95: {fileID: 442334942}
   - 54: {fileID: 442334941}
   - 65: {fileID: 442334940}
+  - 114: {fileID: 442334943}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -6588,6 +6602,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &442334943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11468288, guid: 4a87106612ac385468f68e3b48968fb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 2027533506}
+  m_GameObject: {fileID: 442334938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &442489322
 GameObject:
   m_ObjectHideFlags: 0
@@ -8762,7 +8788,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494770, guid: 4a87106612ac385468f68e3b48968fb5, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a87106612ac385468f68e3b48968fb5, type: 2}
@@ -10073,6 +10099,7 @@ GameObject:
   - 95: {fileID: 683282269}
   - 54: {fileID: 683282268}
   - 65: {fileID: 683282267}
+  - 114: {fileID: 683282270}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -10145,6 +10172,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &683282270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11468288, guid: 4a87106612ac385468f68e3b48968fb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 962499948}
+  m_GameObject: {fileID: 683282265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695287970
 GameObject:
   m_ObjectHideFlags: 0
@@ -19830,6 +19869,7 @@ GameObject:
   - 95: {fileID: 1304123644}
   - 54: {fileID: 1304123643}
   - 65: {fileID: 1304123642}
+  - 114: {fileID: 1304123645}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -19902,6 +19942,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1304123645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11468288, guid: 4a87106612ac385468f68e3b48968fb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 7511033}
+  m_GameObject: {fileID: 1304123640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1305944260
 GameObject:
   m_ObjectHideFlags: 0
@@ -26556,6 +26608,7 @@ GameObject:
   - 95: {fileID: 1743095849}
   - 54: {fileID: 1743095848}
   - 65: {fileID: 1743095847}
+  - 114: {fileID: 1743095850}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -26628,6 +26681,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1743095850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11468288, guid: 4a87106612ac385468f68e3b48968fb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1817846067}
+  m_GameObject: {fileID: 1743095845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1743678076
 GameObject:
   m_ObjectHideFlags: 0
@@ -28649,6 +28714,7 @@ GameObject:
   - 95: {fileID: 1879057444}
   - 54: {fileID: 1879057443}
   - 65: {fileID: 1879057442}
+  - 114: {fileID: 1879057445}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -28721,6 +28787,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1879057445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11468288, guid: 4a87106612ac385468f68e3b48968fb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 2019803666}
+  m_GameObject: {fileID: 1879057440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1884691958
 GameObject:
   m_ObjectHideFlags: 0
@@ -30560,6 +30638,7 @@ GameObject:
   - 95: {fileID: 1987905081}
   - 54: {fileID: 1987905080}
   - 65: {fileID: 1987905079}
+  - 114: {fileID: 1987905082}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -30632,6 +30711,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1987905082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11468288, guid: 4a87106612ac385468f68e3b48968fb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 568472982}
+  m_GameObject: {fileID: 1987905077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1988825007
 GameObject:
   m_ObjectHideFlags: 0
@@ -31352,7 +31443,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494770, guid: 4a87106612ac385468f68e3b48968fb5, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a87106612ac385468f68e3b48968fb5, type: 2}
@@ -32125,6 +32216,7 @@ GameObject:
   - 95: {fileID: 2057871635}
   - 54: {fileID: 2057871634}
   - 65: {fileID: 2057871633}
+  - 114: {fileID: 2057871636}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -32197,6 +32289,18 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2057871636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11468288, guid: 4a87106612ac385468f68e3b48968fb5,
+    type: 2}
+  m_PrefabInternal: {fileID: 338226293}
+  m_GameObject: {fileID: 2057871631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2057930257
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\ATK-DEF Items\s_ObjectPlacement.cs" />
      <Compile Include="Assets\Scripts\ATK-DEF Items\s_SpawnThief.cs" />
      <Compile Include="Assets\Scripts\ATK-DEF Items\s_TurnDestroy.cs" />
+     <Compile Include="Assets\Scripts\Theif\s_AnimMovementFix.cs" />
      <Compile Include="Assets\Scripts\Theif\s_GBTheifAnim.cs" />
      <Compile Include="Assets\Scripts\Theif\s_TheifAnimation.cs" />
      <Compile Include="Assets\Scripts\Theif\s_TheifManager.cs" />

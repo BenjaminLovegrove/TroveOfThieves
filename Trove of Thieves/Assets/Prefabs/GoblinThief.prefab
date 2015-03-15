@@ -1191,6 +1191,7 @@ GameObject:
   - 95: {fileID: 9594770}
   - 54: {fileID: 5494770}
   - 65: {fileID: 6594770}
+  - 114: {fileID: 11468288}
   m_Layer: 0
   m_Name: Goblin_Bandit_Prefab
   m_TagString: P2Theif
@@ -2469,6 +2470,17 @@ Animator:
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11468288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 194924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25c28cc016e641b4ba0ab65943360fd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11494770
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2494,6 +2506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
   canMove: 1
+  dead: 0
 --- !u!137 &13794770
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
