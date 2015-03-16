@@ -74,7 +74,7 @@ public class s_TheifMovementController : MonoBehaviour {
 				dead = true;
 				Destroy (this.gameObject, 1f);
 				Destroy (hit.collider.gameObject, 1f);
-			} else if (hit.collider.tag == "Ice") {
+			} else if (hit.collider.tag == "IceCube") {
 				if (!touchingIce) {
 					touchingIce = true;
 					float x = Mathf.Abs (transform.position.x) - Mathf.Abs (newPos.x);
