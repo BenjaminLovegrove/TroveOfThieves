@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class s_TheifMovementController : MonoBehaviour {
 
 	s_EventManager EventManager;
 	public AudioClip thiefDeathAudio;
+	public AudioClip coinsSFX;
+	public AudioClip diceRoll;
 
 	Vector3 newPos;
 	Vector3 rayDir = Vector3.left;
@@ -12,6 +15,8 @@ public class s_TheifMovementController : MonoBehaviour {
 	bool touchingIce = false;
 	float moveSpeed = 1;
 	public bool dead = false;
+
+	public Text moveRoll;
 
 	Vector3 altObjectRot = new Vector3 (0, 180, 0);
 
@@ -55,6 +60,8 @@ public class s_TheifMovementController : MonoBehaviour {
 	/* This calculates a speed based on the distance needed to cover and the steps
 	 * Also sets the position to lerp to and sets the players move ability to true */
 	void DoMove(int steps){
+		Camera.main.audio.clip = diceRoll;
+		Camera.main.audio.Play ();
 		moveSpeed = 1;
 		//moveSpeed = steps / (Vector3.Distance (transform.position, newPos));
 		newPos = transform.position + Vector3.right * steps;
@@ -103,6 +110,8 @@ public class s_TheifMovementController : MonoBehaviour {
 	}
 
 	void CollectGold(){
+		Camera.main.audio.clip = coinsSFX;
+		Camera.main.audio.Play ();
 		if (this.gameObject.tag == "P1Theif") {
 			EventManager.playerOneGold += 100;
 			EventManager.playerTwoGold -= 100;

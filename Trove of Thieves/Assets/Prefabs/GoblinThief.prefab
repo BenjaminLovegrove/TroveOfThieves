@@ -2505,6 +2505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thiefDeathAudio: {fileID: 8300000, guid: 7827d8f4e717a134482a17364cfbacb4, type: 3}
+  coinsSFX: {fileID: 8300000, guid: cff8d123b46ab9445943fb86a8133372, type: 3}
+  diceRoll: {fileID: 8300000, guid: b9e17a6a9846826478a0c3ccda313e52, type: 3}
   canMove: 1
   dead: 0
 --- !u!137 &13794770
