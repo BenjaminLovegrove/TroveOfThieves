@@ -5,7 +5,6 @@ SceneSettings:
   m_ObjectHideFlags: 0
   m_PVSData: 
   m_PVSObjectsArray: []
-  m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
     smallestOccluder: 5
     smallestHole: .25
