@@ -100,12 +100,6 @@ public class s_EventManager : MonoBehaviour {
 			Camera.main.audio.Play ();
 		}
 		else if (playerTurn == EnumState.playerTwo) {
-<<<<<<< HEAD
-=======
-			playerTurn = EnumState.movePhase;
-			Camera.main.audio.clip = rollDiceAudio;
-			Camera.main.audio.Play ();
->>>>>>> origin/master
 			TheifManager.TheifTurnPhase ();
 			playerTurn = EnumState.playerOne;
 			playerOneTurnText.enabled = true;
