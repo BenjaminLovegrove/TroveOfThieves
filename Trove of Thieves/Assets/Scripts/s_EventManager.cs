@@ -79,13 +79,13 @@ public class s_EventManager : MonoBehaviour {
 			//playerTwoTurnText.enabled = true;
 			playerTurnToken = 2;
 		}
-		else if (playerTurn == EnumState.movePhase) {
+		/*else if (playerTurn == EnumState.movePhase) {
 			playerOneTurnText.text = "Thieves Turn!";
 			playerTwoTurnText.text = "Moving x" + TheifManager.moveSteps + " Steps";
 			//playerOneTurnText.enabled = true;
 			//playerTwoTurnText.enabled = true;
 			playerTurnToken = 3;
-		}
+		}*/
 	}
 
 	public void EndTurnPressed(){
