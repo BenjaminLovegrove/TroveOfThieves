@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &6750186
 GameObject:
@@ -13999,15 +14000,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1204648537}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -25.8899994}
-  m_LocalScale: {x: .0190417506, y: .0190417506, z: .0190417506}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalScale: {x: .0350000001, y: .0350000001, z: .0350000001}
   m_Children: []
   m_Father: {fileID: 1707377136}
   m_RootOrder: 11
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -48.5000038, y: -36.7500076}
-  m_SizeDelta: {x: 461, y: 76.5999985}
+  m_AnchoredPosition: {x: 16.3400002, y: -70.4100037}
+  m_SizeDelta: {x: 914.539978, y: 197.899994}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1204648539
 MonoBehaviour:
@@ -14021,20 +14022,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .252054513, g: .703215778, b: .926470578, a: 1}
+  m_Color: {r: .97647059, g: .823529422, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 606db57e6833a70418ecc1828a3adddc, type: 3}
-    m_FontSize: 54
+    m_FontSize: 90
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
-    m_RichText: 1
+    m_Alignment: 4
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Movement Roll - 00
+  m_Text: Move Roll x12 steps
 --- !u!222 &1204648540
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19369,8 +19370,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295

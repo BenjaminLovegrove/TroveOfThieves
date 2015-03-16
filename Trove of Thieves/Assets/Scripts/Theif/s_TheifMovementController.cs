@@ -37,18 +37,20 @@ public class s_TheifMovementController : MonoBehaviour {
 			//Sets the direction and lerps Theif when allowed to move
 			if (canMove) {
 				if (this.gameObject.tag == "P1Theif") {
-					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 1.7f);
+					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 3);
 					rayDir = Vector3.right;
 				}
 			
 				if (this.gameObject.tag == "P2Theif") {
-					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 1.7f);
+					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 3);
 					rayDir = Vector3.left;
 				}
 			}
+			/*
 			if (EventManager.playerTurnToken != 3) {
 				touchingIce = false;
 			}
+			*/
 		} else {
 			canMove = false;
 			newPos = transform.position;
@@ -86,6 +88,7 @@ public class s_TheifMovementController : MonoBehaviour {
 				Destroy (hit.collider.gameObject, 1f);
 			} else if (hit.collider.tag == "IceCube") {
 				if (!touchingIce) {
+					print ("hello");
 					touchingIce = true;
 					float x = Mathf.Abs (transform.position.x) - Mathf.Abs (newPos.x);
 					newPos = new Vector3 (newPos.x + x / 2, newPos.y, newPos.z);

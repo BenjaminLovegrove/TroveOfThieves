@@ -29,10 +29,10 @@ public class s_TheifManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (isMovementTurn) {
-			moveText.text = "Movement Roll - " + moveSteps;
+			moveText.text = "Move Roll x" + moveSteps + " steps";
 			moveText.enabled = true;
 			moveWaitTime = moveSteps;
-			moveTimer += Time.deltaTime;
+			moveTimer += 2 * Time.deltaTime;
 			ButtonUI.EndButtonTimed (false);
 			if (moveTimer >= moveWaitTime) {
 				//EventManager.EndTurnPressed ();
@@ -57,7 +57,7 @@ public class s_TheifManager : MonoBehaviour {
 	}
 
 	public void TheifTurnPhase(){
-		moveSteps = Random.Range (2, 12);
+		moveSteps = Random.Range (2, 13);
 		if (EventManager.playerTurnToken == 1) {
 			theifSpawns = GameObject.FindGameObjectsWithTag ("P1Theif");
 			foreach (GameObject theifSpawn in theifSpawns) {
