@@ -506,7 +506,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: Two Player
 --- !u!222 &907594625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -721,14 +721,14 @@ RectTransform:
   m_GameObject: {fileID: 1026120690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .0907386988, y: .162864298, z: .0317585394}
+  m_LocalScale: {x: .104060099, y: .20708406, z: .0317585394}
   m_Children:
   - {fileID: 1623334737}
   m_Father: {fileID: 2119173676}
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 44.2000084, y: -45.4871788}
+  m_AnchoredPosition: {x: 45.5, y: -47.9099579}
   m_SizeDelta: {x: 99.4000015, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1026120692
@@ -750,7 +750,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: .388045132, g: .366727918, b: .41911763, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
     m_HighlightedColor: {r: .214100376, g: .333701253, b: .529411793, a: 1}
     m_PressedColor: {r: .482564747, g: .551470578, b: .239240915, a: .478431374}
     m_DisabledColor: {r: .126513854, g: .661764741, b: .329540074, a: .501960814}
