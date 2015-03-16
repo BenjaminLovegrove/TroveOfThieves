@@ -92,6 +92,7 @@ public class s_EventManager : MonoBehaviour {
 		// Checks Whos Turn It Is,
 		// Updates Player Turn When Button Pressed
 		if (playerTurn == EnumState.playerOne) {
+			TheifManager.TheifTurnPhase ();
 			playerTurn = EnumState.playerTwo;
 			playerOneTurnText.enabled = false;
 			playerTwoTurnText.enabled = true;
@@ -99,26 +100,27 @@ public class s_EventManager : MonoBehaviour {
 			Camera.main.audio.Play ();
 		}
 		else if (playerTurn == EnumState.playerTwo) {
-			playerTurn = EnumState.movePhase;
 			TheifManager.TheifTurnPhase ();
-		}
-		else if (playerTurn == EnumState.movePhase) {
 			playerTurn = EnumState.playerOne;
+			playerOneTurnText.enabled = true;
+			playerTwoTurnText.enabled = false;
 			Camera.main.audio.clip = p1MoveAudio;
 			Camera.main.audio.Play ();
-
-			destroyChecks = GameObject.FindGameObjectsWithTag ("Boulder");
-			foreach (GameObject destroyCheck in destroyChecks) {
-				destroyCheck.SendMessage ("TurnCheck");
-			}
-			destroyChecks = GameObject.FindGameObjectsWithTag ("Barricade");
-			foreach (GameObject destroyCheck in destroyChecks) {
-				destroyCheck.SendMessage ("TurnCheck");
-			}
-			destroyChecks = GameObject.FindGameObjectsWithTag ("IceCube");
-			foreach (GameObject destroyCheck in destroyChecks) {
-				destroyCheck.SendMessage ("TurnCheck");
-			}
+			DestroyCheck();
+		}
+	}
+	void DestroyCheck(){
+		destroyChecks = GameObject.FindGameObjectsWithTag ("Boulder");
+		foreach (GameObject destroyCheck in destroyChecks) {
+			destroyCheck.SendMessage ("TurnCheck");
+		}
+		destroyChecks = GameObject.FindGameObjectsWithTag ("Barricade");
+		foreach (GameObject destroyCheck in destroyChecks) {
+			destroyCheck.SendMessage ("TurnCheck");
+		}
+		destroyChecks = GameObject.FindGameObjectsWithTag ("IceCube");
+		foreach (GameObject destroyCheck in destroyChecks) {
+			destroyCheck.SendMessage ("TurnCheck");
 		}
 	}
 

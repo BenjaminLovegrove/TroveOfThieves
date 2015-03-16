@@ -48,6 +48,9 @@ public class s_TheifMovementController : MonoBehaviour {
 			canMove = false;
 			newPos = transform.position;
 		}
+		if (transform.position == newPos){
+			canMove = false;
+		}
 	}
 	/* This calculates a speed based on the distance needed to cover and the steps
 	 * Also sets the position to lerp to and sets the players move ability to true */
@@ -92,9 +95,9 @@ public class s_TheifMovementController : MonoBehaviour {
 			// The check here has to be here because if its in update
 			// It will override any CollissionDetetion() decisions
 		else if (EventManager.playerTurnToken != 3) {
-			canMove = false;
+			//canMove = false;
 		} else {
-			canMove = true;
+			//canMove = true;
 		}
 		
 	}
