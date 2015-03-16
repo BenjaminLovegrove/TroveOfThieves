@@ -32,6 +32,18 @@ public class s_TheifManager : MonoBehaviour {
 				ButtonUI.EndButtonTimed(true);
 				moveTimer = 0;
 				isMovementTurn = false;
+				if (EventManager.playerTurnToken == 1){
+					EventManager.playerOneTurnText.enabled = true;
+					EventManager.playerTwoTurnText.enabled = false;
+					Camera.main.audio.clip = EventManager.p1MoveAudio;
+					Camera.main.audio.Play ();
+				}
+				if (EventManager.playerTurnToken == 2){
+					EventManager.playerOneTurnText.enabled = false;
+					EventManager.playerTwoTurnText.enabled = true;
+					Camera.main.audio.clip = EventManager.p2MoveAudio;
+					Camera.main.audio.Play ();
+				}
 			}
 		}
 	}
