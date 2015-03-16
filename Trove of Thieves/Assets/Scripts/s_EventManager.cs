@@ -134,12 +134,12 @@ public class s_EventManager : MonoBehaviour {
 		// Checks Whos Turn It Is,
 		// Updates Player Gold When Button Pressed
 		if (playerTurn == EnumState.playerOne) {
-			playerOneAP += Random.Range (1,7);
-			playerOneAP += Random.Range (1,7);
+			playerOneAP += Random.Range (1,6);
+			playerOneAP += Random.Range (1,6);
 		}
 		else if (playerTurn == EnumState.playerTwo) {
-			playerTwoAP += Random.Range (1,7);
-			playerTwoAP += Random.Range (1,7);
+			playerTwoAP += Random.Range (1,6);
+			playerTwoAP += Random.Range (1,6);
 		}
 	}
 

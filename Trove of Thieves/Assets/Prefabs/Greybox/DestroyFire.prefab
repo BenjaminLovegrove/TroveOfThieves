@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9689bb64ee61854396b619e8b893425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCost: 5
+  itemCost: 4
   targetObject: Fire
   noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
   invalidAudio: {fileID: 8300000, guid: 2651cc6e31e017646b362c542caba720, type: 3}

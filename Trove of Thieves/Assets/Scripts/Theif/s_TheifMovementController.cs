@@ -37,12 +37,12 @@ public class s_TheifMovementController : MonoBehaviour {
 			//Sets the direction and lerps Theif when allowed to move
 			if (canMove) {
 				if (this.gameObject.tag == "P1Theif") {
-					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime);
+					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 1.7f);
 					rayDir = Vector3.right;
 				}
 			
 				if (this.gameObject.tag == "P2Theif") {
-					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime);
+					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 1.7f);
 					rayDir = Vector3.left;
 				}
 			}

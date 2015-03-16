@@ -13,6 +13,7 @@ public class s_TheifManager : MonoBehaviour {
 	public int moveSteps;
 	float moveWaitTime = 2;
 	float moveTimer = 0;
+	public float thiefAccel = 1.5f;
 
 	public Text moveText;
 
@@ -60,13 +61,13 @@ public class s_TheifManager : MonoBehaviour {
 		if (EventManager.playerTurnToken == 1) {
 			theifSpawns = GameObject.FindGameObjectsWithTag ("P1Theif");
 			foreach (GameObject theifSpawn in theifSpawns) {
-				theifSpawn.SendMessage ("DoMove", moveSteps, SendMessageOptions.DontRequireReceiver);
+				theifSpawn.SendMessage ("DoMove", moveSteps * thiefAccel, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 		else if (EventManager.playerTurnToken == 2) {
 			theifSpawns = GameObject.FindGameObjectsWithTag ("P2Theif");
 			foreach (GameObject theifSpawn in theifSpawns) {
-				theifSpawn.SendMessage ("DoMove", -moveSteps, SendMessageOptions.DontRequireReceiver);
+				theifSpawn.SendMessage ("DoMove", -moveSteps * thiefAccel, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 		isMovementTurn = true;
