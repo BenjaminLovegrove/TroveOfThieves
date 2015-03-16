@@ -9,6 +9,7 @@ public class s_ButtonUI : MonoBehaviour {
 	bool canEnd = false;
 
 	public AudioClip noGoldAudio;
+	public AudioClip coins;
 
 	public Button rollDiceButton, endTurnButton;
 
@@ -112,6 +113,8 @@ public class s_ButtonUI : MonoBehaviour {
 	}
 
 	void StealGoldSpell(){
+		Camera.main.audio.clip = coins;
+		Camera.main.audio.Play ();
 		if (EventManager.playerTurnToken == 1) {
 			EventManager.playerOneAP -= 8;
 			EventManager.playerOneGold += 100;
