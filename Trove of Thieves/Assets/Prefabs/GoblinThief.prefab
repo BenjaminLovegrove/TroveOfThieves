@@ -2504,7 +2504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb541ea9e555e7f4784bbd75d3b8dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
+  thiefDeathAudio: {fileID: 8300000, guid: 7827d8f4e717a134482a17364cfbacb4, type: 3}
   canMove: 1
   dead: 0
 --- !u!137 &13794770

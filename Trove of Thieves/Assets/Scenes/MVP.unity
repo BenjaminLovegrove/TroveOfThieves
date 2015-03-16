@@ -5659,7 +5659,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494770, guid: 4a87106612ac385468f68e3b48968fb5, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4a87106612ac385468f68e3b48968fb5, type: 2}
@@ -9409,7 +9409,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 494770, guid: 4a87106612ac385468f68e3b48968fb5, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 194770, guid: 4a87106612ac385468f68e3b48968fb5, type: 2}
       propertyPath: m_TagString
@@ -11737,7 +11737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb541ea9e555e7f4784bbd75d3b8dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
+  thiefDeathAudio: {fileID: 8300000, guid: 7827d8f4e717a134482a17364cfbacb4, type: 3}
   canMove: 1
   dead: 0
 --- !u!1 &1170891506
@@ -12634,7 +12634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb541ea9e555e7f4784bbd75d3b8dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
+  thiefDeathAudio: {fileID: 8300000, guid: 7827d8f4e717a134482a17364cfbacb4, type: 3}
   canMove: 1
   dead: 0
 --- !u!1 &1242918529
@@ -15813,7 +15813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb541ea9e555e7f4784bbd75d3b8dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
+  thiefDeathAudio: {fileID: 8300000, guid: 7827d8f4e717a134482a17364cfbacb4, type: 3}
   canMove: 1
   dead: 0
 --- !u!1 &1596512349
@@ -19840,6 +19840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
+  coins: {fileID: 8300000, guid: cff8d123b46ab9445943fb86a8133372, type: 3}
   rollDiceButton: {fileID: 11618920}
   endTurnButton: {fileID: 1716877717}
   atkOBJ1: {fileID: 192316, guid: 3fe6ddbb8c292b1479ebb41c8b3b1da9, type: 2}
@@ -20659,7 +20660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb541ea9e555e7f4784bbd75d3b8dd98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thiefDeathAudio: {fileID: 8300000, guid: 22c80fce2cf491043b08284324da5b70, type: 3}
+  thiefDeathAudio: {fileID: 8300000, guid: 7827d8f4e717a134482a17364cfbacb4, type: 3}
   canMove: 1
   dead: 0
 --- !u!1 &2037610276
