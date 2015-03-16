@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class s_TheifManager : MonoBehaviour {
 	
 	s_EventManager EventManager;
+	s_ButtonUI ButtonUI;
 
 	GameObject[] theifSpawns;
 	bool isMovementTurn;
@@ -15,6 +16,7 @@ public class s_TheifManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		EventManager = this.gameObject.GetComponent<s_EventManager> ();
+		ButtonUI = (s_ButtonUI)GameObject.Find ("UI Camera").GetComponent<s_ButtonUI> ();
 		isMovementTurn = false;
 		moveSteps = 0;
 	}
@@ -24,8 +26,10 @@ public class s_TheifManager : MonoBehaviour {
 		if (isMovementTurn) {
 			moveWaitTime = moveSteps;
 			moveTimer += Time.deltaTime;
+			ButtonUI.EndButtonTimed(false);
 			if (moveTimer >= moveWaitTime){
-				EventManager.EndTurnPressed ();
+				//EventManager.EndTurnPressed ();
+				ButtonUI.EndButtonTimed(true);
 				moveTimer = 0;
 				isMovementTurn = false;
 			}
@@ -34,13 +38,17 @@ public class s_TheifManager : MonoBehaviour {
 
 	public void TheifTurnPhase(){
 		moveSteps = Random.Range (2, 13);
-		theifSpawns = GameObject.FindGameObjectsWithTag ("P1Theif");
-		foreach (GameObject theifSpawn in theifSpawns) {
-			theifSpawn.SendMessage ("DoMove", moveSteps, SendMessageOptions.DontRequireReceiver);
+		if (EventManager.playerTurnToken == 1) {
+			theifSpawns = GameObject.FindGameObjectsWithTag ("P1Theif");
+			foreach (GameObject theifSpawn in theifSpawns) {
+				theifSpawn.SendMessage ("DoMove", moveSteps, SendMessageOptions.DontRequireReceiver);
+			}
 		}
-		theifSpawns = GameObject.FindGameObjectsWithTag ("P2Theif");
-		foreach (GameObject theifSpawn in theifSpawns) {
-			theifSpawn.SendMessage ("DoMove", -moveSteps, SendMessageOptions.DontRequireReceiver);
+		else if (EventManager.playerTurnToken == 2) {
+			theifSpawns = GameObject.FindGameObjectsWithTag ("P2Theif");
+			foreach (GameObject theifSpawn in theifSpawns) {
+				theifSpawn.SendMessage ("DoMove", -moveSteps, SendMessageOptions.DontRequireReceiver);
+			}
 		}
 		isMovementTurn = true;
 	}

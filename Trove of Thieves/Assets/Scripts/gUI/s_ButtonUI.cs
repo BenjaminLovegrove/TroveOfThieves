@@ -6,6 +6,7 @@ public class s_ButtonUI : MonoBehaviour {
 
 	s_EventManager EventManager;
 	bool rolledDice = false;
+	bool canEnd = false;
 
 	public AudioClip noGoldAudio;
 	public AudioClip coins;
@@ -33,19 +34,38 @@ public class s_ButtonUI : MonoBehaviour {
 	void UnityGuiController(){
 		Text rollText = rollDiceButton.GetComponentInChildren<Text>();
 		Text endText = endTurnButton.GetComponentInChildren<Text>();
-		if (!rolledDice && EventManager.playerTurnToken != 3) {
+		if (!rolledDice) {
 			rollDiceButton.interactable = true;
 			rollText.text = "Roll";
 		} else { 
 			rollDiceButton.interactable = false; 
 			rollText.text = ". . .";
 		}
-		if (EventManager.playerTurnToken != 3) {
+		if (canEnd){
 			endTurnButton.interactable = true;
 			endText.text = "End";
-		} else { 
+		} else {
 			endTurnButton.interactable = false;
 			endText.text = ". . .";
+		}
+
+	}
+
+	public void EndButtonTimed(bool condition){
+		Text endText = endTurnButton.GetComponentInChildren<Text>();
+		Text rollText = rollDiceButton.GetComponentInChildren<Text>();
+		if (condition) {
+			endTurnButton.interactable = true;
+			endText.text = "End";
+			rollDiceButton.interactable = true;
+			rollText.text = "Roll";
+			rolledDice = false;
+		}
+		if (!condition) {
+			endTurnButton.interactable = false;
+			endText.text = ". . .";
+			rollDiceButton.interactable = false; 
+			rollText.text = ". . .";
 		}
 	}
 
@@ -60,11 +80,13 @@ public class s_ButtonUI : MonoBehaviour {
 	void TurnControllingUI(string buttonName){
 		if (buttonName == "RollDice") {
 			rolledDice = true;
+			canEnd = true;
 			EventManager.RollDicePressed ();
 		}
 		if (buttonName == "EndTurn") {
+			canEnd = false;
 			EventManager.EndTurnPressed ();
-			rolledDice = false;
+			//rolledDice = true;
 		}
 	}
 
@@ -136,10 +158,6 @@ public class s_ButtonUI : MonoBehaviour {
 				}
 			}
 		}
-	}
-
-	void OnGUI(){
-
 	}
 }
 
