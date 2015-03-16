@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 494770}
   - 114: {fileID: 11494772}
   - 114: {fileID: 11494770}
-  - 54: {fileID: 5485216}
   m_Layer: 0
   m_Name: GoblinThief
   m_TagString: P2Theif
@@ -1207,7 +1206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22, y: 3.0999999, z: -33}
+  m_LocalPosition: {x: 13.9269314, y: 3.0999999, z: -31.8136139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 494924}
@@ -2429,21 +2428,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194894}
   m_Mesh: {fileID: 4300016, guid: 43990f0969b487540a5ce7cc1dc64d0a, type: 3}
---- !u!54 &5485216
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 194770}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: .0500000007
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!54 &5494770
 Rigidbody:
   m_ObjectHideFlags: 1
