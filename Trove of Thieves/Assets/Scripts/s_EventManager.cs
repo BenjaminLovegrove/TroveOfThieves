@@ -6,6 +6,7 @@ public class s_EventManager : MonoBehaviour {
 
 	s_TheifManager TheifManager;
 	GameObject[] destroyChecks;
+	s_DiceRoll DiceRoller;
 
 	// Handles Player Turn
 	enum EnumState {
@@ -20,10 +21,14 @@ public class s_EventManager : MonoBehaviour {
 	//Handles Player Action Points
 	public int playerOneGold = 1000;
 	public int playerTwoGold = 1000;
+	public int dieOne, dieTwo;
 	public int playerOneAP, playerTwoAP;
 	public Text playerOneAPText, playerTwoAPText;
 	public Text playerOneGoldGUI, playerTwoGoldGUI;
 	public Text playerOneTurnText, playerTwoTurnText;
+
+	public SpriteRenderer dieOneTexture, dieTwoTexture;
+	public Sprite d1,d2,d3,d4,d5,d6;
 
 	//Handles Some Audio
 	AudioSource audioToPlay;
@@ -39,13 +44,13 @@ public class s_EventManager : MonoBehaviour {
 	void Start () {
 		Screen.fullScreen = true;
 		TheifManager = this.gameObject.GetComponent<s_TheifManager> ();
+		DiceRoller = this.gameObject.GetComponent<s_DiceRoll> ();
 		//Sets To Default
 		playerTurn = EnumState.playerOne;
-		playerOneAP = 0;
-		playerTwoAP = 0;
 		playerTurnToken = 1;
 		Camera.main.audio.clip = p1MoveAudio;
 		Camera.main.audio.Play ();
+		RollDice ();
 	}
 	
 	// Update is called once per frame
@@ -54,6 +59,17 @@ public class s_EventManager : MonoBehaviour {
 		PlayerTurnTextCheck ();
 		playerOneGoldGUI.text = (playerOneGold + " Gold");
 		playerTwoGoldGUI.text = (playerTwoGold + " Gold");
+	}
+
+	void RollDice(){
+	//	Camera.main.audio.clip = rollDiceAudio;
+	//	Camera.main.audio.Play ();
+		dieOne = DiceRoller.DoRollOne ();
+		dieTwo = DiceRoller.DoRollTwo ();
+		playerOneAP = dieOne + dieTwo;
+		playerTwoAP = dieOne + dieTwo;
+		ChangeDieSprite ();
+
 	}
 
 	void GoldUpdate(){
@@ -69,11 +85,20 @@ public class s_EventManager : MonoBehaviour {
 			playerOneTurnText.text = "Your Turn!";
 			playerTwoTurnText.text = "Your Turn!";
 			playerTurnToken = 1;
-		}
-		else if (playerTurn == EnumState.playerTwo){
+			playerOneTurnText.enabled = true;
+			playerTwoTurnText.enabled = false;
+		} else if (playerTurn == EnumState.playerTwo) {
 			playerOneTurnText.text = "Your Turn!";
 			playerTwoTurnText.text = "Your Turn!";
 			playerTurnToken = 2;
+			playerOneTurnText.enabled = false;
+			playerTwoTurnText.enabled = true;
+		} else if (playerTurn == EnumState.movePhase) {
+		//	playerOneTurnText.text = "Move Phase";
+		//	playerTwoTurnText.text = "Move Phase";
+			playerTurnToken = 3;
+			playerOneTurnText.enabled = true;
+			playerTwoTurnText.enabled = true;
 		}
 	}
 
@@ -81,15 +106,24 @@ public class s_EventManager : MonoBehaviour {
 		// Checks Whos Turn It Is,
 		// Updates Player Turn When Button Pressed
 		if (playerTurn == EnumState.playerOne) {
-			TheifManager.TheifTurnPhase ();
 			playerTurn = EnumState.playerTwo;
+			Camera.main.audio.clip = p2MoveAudio;
+			Camera.main.audio.Play ();
 		}
 		else if (playerTurn == EnumState.playerTwo) {
+			playerTurn = EnumState.movePhase;
 			TheifManager.TheifTurnPhase ();
-			playerTurn = EnumState.playerOne;
 			DestroyCheck();
 		}
 	}
+
+	public void MovePhaseEnd(){
+		playerTurn = EnumState.playerOne;
+		Camera.main.audio.clip = p1MoveAudio;
+		Camera.main.audio.Play ();
+		RollDice ();
+	}
+
 	void DestroyCheck(){
 		destroyChecks = GameObject.FindGameObjectsWithTag ("Boulder");
 		foreach (GameObject destroyCheck in destroyChecks) {
@@ -122,5 +156,32 @@ public class s_EventManager : MonoBehaviour {
 
 	public void InstantiateObject(string name){
 
+	}
+
+	void ChangeDieSprite(){
+		if (dieOne == 1)
+			dieOneTexture.sprite = d1;
+		if (dieOne == 2)
+			dieOneTexture.sprite = d2;
+		if (dieOne == 3)
+			dieOneTexture.sprite = d3;
+		if (dieOne == 4)
+			dieOneTexture.sprite = d4;
+		if (dieOne == 5)
+			dieOneTexture.sprite = d5;
+		if (dieOne == 6)
+			dieOneTexture.sprite = d6;
+		if (dieTwo == 1)
+			dieTwoTexture.sprite = d1;
+		if (dieTwo == 2)
+			dieTwoTexture.sprite = d2;
+		if (dieTwo == 3)
+			dieTwoTexture.sprite = d3;
+		if (dieTwo == 4)
+			dieTwoTexture.sprite = d4;
+		if (dieTwo == 5)
+			dieTwoTexture.sprite = d5;
+		if (dieTwo == 6)
+			dieTwoTexture.sprite = d6;
 	}
 }

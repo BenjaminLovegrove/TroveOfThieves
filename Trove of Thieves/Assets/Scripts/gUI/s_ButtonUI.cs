@@ -5,13 +5,11 @@ using UnityEngine.UI;
 public class s_ButtonUI : MonoBehaviour {
 
 	s_EventManager EventManager;
-	bool rolledDice = false;
-	bool canEnd = false;
 
 	public AudioClip noGoldAudio;
 	public AudioClip coins;
 
-	public Button rollDiceButton, endTurnButton;
+	public Button endTurnButton;
 
 	public GameObject atkOBJ1, atkOBJ2;
 	public GameObject defOBJ1, defOBJ2, defOBJ3, defOBJ4;
@@ -27,46 +25,7 @@ public class s_ButtonUI : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		UnityGuiController ();
-	}
-
-	/* This will handle weather or not a button is visible/active or not */
-	void UnityGuiController(){
-		Text rollText = rollDiceButton.GetComponentInChildren<Text>();
-		Text endText = endTurnButton.GetComponentInChildren<Text>();
-		if (!rolledDice) {
-			rollDiceButton.interactable = true;
-			rollText.text = "Roll";
-		} else { 
-			rollDiceButton.interactable = false; 
-			rollText.text = ". . .";
-		}
-		if (canEnd){
-			endTurnButton.interactable = true;
-			endText.text = "End";
-		} else {
-			endTurnButton.interactable = false;
-			endText.text = ". . .";
-		}
-
-	}
-
-	public void EndButtonTimed(bool condition){
-		Text endText = endTurnButton.GetComponentInChildren<Text>();
-		Text rollText = rollDiceButton.GetComponentInChildren<Text>();
-		if (condition) {
-			endTurnButton.interactable = true;
-			endText.text = "End";
-			rollDiceButton.interactable = true;
-			rollText.text = "Roll";
-			rolledDice = false;
-		}
-		if (!condition) {
-			endTurnButton.interactable = false;
-			endText.text = ". . .";
-			rollDiceButton.interactable = false; 
-			rollText.text = ". . .";
-		}
+		//UnityGuiController ();
 	}
 
 	/*Upon a UI button being press, the fuction will be called
@@ -78,15 +37,8 @@ public class s_ButtonUI : MonoBehaviour {
 
 	/* This part will handle the Roll Dice and End Turn Buttons */
 	void TurnControllingUI(string buttonName){
-		if (buttonName == "RollDice") {
-			rolledDice = true;
-			canEnd = true;
-			EventManager.RollDicePressed ();
-		}
 		if (buttonName == "EndTurn") {
-			canEnd = false;
 			EventManager.EndTurnPressed ();
-			//rolledDice = true;
 		}
 	}
 

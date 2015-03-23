@@ -37,20 +37,15 @@ public class s_TheifMovementController : MonoBehaviour {
 			//Sets the direction and lerps Theif when allowed to move
 			if (canMove) {
 				if (this.gameObject.tag == "P1Theif") {
-					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 3);
+					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 2);
 					rayDir = Vector3.right;
 				}
 			
 				if (this.gameObject.tag == "P2Theif") {
-					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 3);
+					transform.position = Vector3.MoveTowards (transform.position, newPos, moveSpeed * Time.deltaTime * 2);
 					rayDir = Vector3.left;
 				}
 			}
-			/*
-			if (EventManager.playerTurnToken != 3) {
-				touchingIce = false;
-			}
-			*/
 		} else {
 			canMove = false;
 			newPos = transform.position;
@@ -62,10 +57,7 @@ public class s_TheifMovementController : MonoBehaviour {
 	/* This calculates a speed based on the distance needed to cover and the steps
 	 * Also sets the position to lerp to and sets the players move ability to true */
 	void DoMove(int steps){
-		Camera.main.audio.clip = diceRoll;
-		Camera.main.audio.Play ();
 		moveSpeed = 1;
-		//moveSpeed = steps / (Vector3.Distance (transform.position, newPos));
 		newPos = transform.position + Vector3.right * steps;
 		canMove = true;
 		touchingIce = false;
