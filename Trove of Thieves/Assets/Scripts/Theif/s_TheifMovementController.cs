@@ -12,7 +12,7 @@ public class s_TheifMovementController : MonoBehaviour {
 	Vector3 newPos;
 	Vector3 rayDir = Vector3.left;
 	public bool canMove = true;
-	bool touchingIce = false;
+	public bool touchingIce = false;
 	float moveSpeed = 1;
 	public bool dead = false;
 
@@ -68,7 +68,7 @@ public class s_TheifMovementController : MonoBehaviour {
 		//moveSpeed = steps / (Vector3.Distance (transform.position, newPos));
 		newPos = transform.position + Vector3.right * steps;
 		canMove = true;
-
+		touchingIce = false;
 	}
 	
 	void CollisionDetection(){
@@ -88,12 +88,11 @@ public class s_TheifMovementController : MonoBehaviour {
 				Destroy (hit.collider.gameObject, 1f);
 			} else if (hit.collider.tag == "IceCube") {
 				if (!touchingIce) {
-					print ("hello");
 					touchingIce = true;
 					float x = Mathf.Abs (transform.position.x) - Mathf.Abs (newPos.x);
 					newPos = new Vector3 (newPos.x + x / 2, newPos.y, newPos.z);
 					moveSpeed = 0.5f;
-				}
+				} 
 			} else if (hit.collider.tag == "Gold Pile") {
 				CollectGold ();
 			} else {
@@ -101,15 +100,6 @@ public class s_TheifMovementController : MonoBehaviour {
 				touchingIce = false;
 			}
 		} 
-
-			// The check here has to be here because if its in update
-			// It will override any CollissionDetetion() decisions
-		else if (EventManager.playerTurnToken != 3) {
-			//canMove = false;
-		} else {
-			//canMove = true;
-		}
-		
 	}
 
 	void CollectGold(){
