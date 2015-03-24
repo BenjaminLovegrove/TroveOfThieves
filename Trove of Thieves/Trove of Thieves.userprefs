@@ -1,14 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\gUI\s_CrossHair.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Theif\s_TheifManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\s_DiceRoll.cs" Line="54" Column="1" />
-      <File FileName="Assets\Scripts\s_EventManager.cs" Line="163" Column="1" />
-      <File FileName="Assets\Scripts\gUI\s_ButtonUI.cs" Line="125" Column="1" />
+      <File FileName="Assets\Scripts\gUI\s_ButtonUI.cs" Line="24" Column="70" />
+      <File FileName="Assets\Scripts\s_DiceRoll.cs" Line="17" Column="30" />
+      <File FileName="Assets\Scripts\s_EventManager.cs" Line="112" Column="29" />
       <File FileName="Assets\Scripts\Theif\s_TheifManager.cs" Line="61" Column="1" />
-      <File FileName="Assets\Scripts\Theif\s_TheifMovementController.cs" Line="111" Column="1" />
-      <File FileName="Assets\Scripts\gUI\s_CrossHair.cs" Line="26" Column="40" />
-      <File FileName="Assets\Scripts\ATK-DEF Items\s_ObjectPlacement.cs" Line="76" Column="67" />
+      <File FileName="Assets\Scripts\Theif\s_TheifMovementController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\gUI\s_CrossHair.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ATK-DEF Items\s_ObjectPlacement.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -10,6 +10,7 @@ public class s_ButtonUI : MonoBehaviour {
 	public AudioClip coins;
 
 	public Button endTurnButton;
+	public float endTurnButtonCD = 0;
 
 	public GameObject atkOBJ1, atkOBJ2;
 	public GameObject defOBJ1, defOBJ2, defOBJ3, defOBJ4;
@@ -26,6 +27,10 @@ public class s_ButtonUI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//UnityGuiController ();
+		endTurnButtonCD -= Time.deltaTime;
+		if (endTurnButtonCD < 0) {
+			endTurnButton.interactable = true;
+		}
 	}
 
 	/*Upon a UI button being press, the fuction will be called
@@ -39,6 +44,8 @@ public class s_ButtonUI : MonoBehaviour {
 	void TurnControllingUI(string buttonName){
 		if (buttonName == "EndTurn") {
 			EventManager.EndTurnPressed ();
+			endTurnButton.interactable = false;
+			endTurnButtonCD = 2f;
 		}
 	}
 
