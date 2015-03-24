@@ -27,7 +27,7 @@ public class s_EventManager : MonoBehaviour {
 	public Text playerOneGoldGUI, playerTwoGoldGUI;
 	public Text playerOneTurnText, playerTwoTurnText;
 
-	public SpriteRenderer dieOneTexture, dieTwoTexture;
+	public Animator dieOneTexture, dieTwoTexture;
 	public Sprite d1,d2,d3,d4,d5,d6;
 
 	//Handles Some Audio
@@ -64,11 +64,17 @@ public class s_EventManager : MonoBehaviour {
 	void RollDice(){
 	//	Camera.main.audio.clip = rollDiceAudio;
 	//	Camera.main.audio.Play ();
+		dieOneTexture.SetTrigger ("doRoll");
+		dieTwoTexture.SetTrigger ("doRoll");
+
 		dieOne = DiceRoller.DoRollOne ();
 		dieTwo = DiceRoller.DoRollTwo ();
+
 		playerOneAP = dieOne + dieTwo;
 		playerTwoAP = dieOne + dieTwo;
-		ChangeDieSprite ();
+
+		dieOneTexture.SetInteger ("diceNumber", dieOne);
+		dieTwoTexture.SetInteger ("diceNumber", dieTwo);
 
 	}
 
@@ -152,36 +158,5 @@ public class s_EventManager : MonoBehaviour {
 			playerTwoAP += Random.Range (1,7);
 			playerTwoAP += Random.Range (1,7);
 		}
-	}
-
-	public void InstantiateObject(string name){
-
-	}
-
-	void ChangeDieSprite(){
-		if (dieOne == 1)
-			dieOneTexture.sprite = d1;
-		if (dieOne == 2)
-			dieOneTexture.sprite = d2;
-		if (dieOne == 3)
-			dieOneTexture.sprite = d3;
-		if (dieOne == 4)
-			dieOneTexture.sprite = d4;
-		if (dieOne == 5)
-			dieOneTexture.sprite = d5;
-		if (dieOne == 6)
-			dieOneTexture.sprite = d6;
-		if (dieTwo == 1)
-			dieTwoTexture.sprite = d1;
-		if (dieTwo == 2)
-			dieTwoTexture.sprite = d2;
-		if (dieTwo == 3)
-			dieTwoTexture.sprite = d3;
-		if (dieTwo == 4)
-			dieTwoTexture.sprite = d4;
-		if (dieTwo == 5)
-			dieTwoTexture.sprite = d5;
-		if (dieTwo == 6)
-			dieTwoTexture.sprite = d6;
 	}
 }

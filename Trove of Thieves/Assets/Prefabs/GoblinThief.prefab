@@ -1206,7 +1206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194770}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.9269314, y: 3.0999999, z: -31.8136139}
+  m_LocalPosition: {x: 19, y: 3.20000005, z: -30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 494924}
@@ -2508,7 +2508,9 @@ MonoBehaviour:
   coinsSFX: {fileID: 8300000, guid: cff8d123b46ab9445943fb86a8133372, type: 3}
   diceRoll: {fileID: 8300000, guid: b9e17a6a9846826478a0c3ccda313e52, type: 3}
   canMove: 1
+  touchingIce: 0
   dead: 0
+  moveRoll: {fileID: 0}
 --- !u!137 &13794770
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
