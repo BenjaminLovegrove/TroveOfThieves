@@ -39,9 +39,9 @@ public class s_CrossHair : MonoBehaviour {
 				bot.SetActive (true);
 				Screen.showCursor = false;
 				Transform trans = crossHorBot.GetComponent<Transform>();
-				trans.position = new Vector3 (trans.position.x, trans.position.y, mouseCollider.point.z);
+				trans.position = new Vector3 (trans.position.x, trans.position.y, (int)mouseCollider.point.z);
 				trans = crossVerBot.GetComponent<Transform>();
-				trans.position = new Vector3 (mouseCollider.point.x, trans.position.y, trans.position.z);
+				trans.position = new Vector3 ((int)mouseCollider.point.x, trans.position.y, trans.position.z);
 			} else { 
 				bot.SetActive (false); 
 				Screen.showCursor = true;

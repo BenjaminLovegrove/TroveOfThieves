@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &6750186
 GameObject:
@@ -6426,8 +6427,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.90551281, y: 19.5209942, z: 5.54819808e-13}
-  m_Center: {x: 2.38418636e-07, y: .0820155516, z: .393700868}
+  m_Size: {x: 5.71999979, y: 19.5209942, z: 5.54819808e-13}
+  m_Center: {x: -.0900000036, y: .0820155516, z: .393700868}
 --- !u!1 &549810123
 GameObject:
   m_ObjectHideFlags: 0
@@ -19903,8 +19904,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
