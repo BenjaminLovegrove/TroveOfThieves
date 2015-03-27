@@ -26,6 +26,8 @@ public class s_EventManager : MonoBehaviour {
 	public Text playerOneAPText, playerTwoAPText;
 	public Text playerOneGoldGUI, playerTwoGoldGUI;
 	public Text playerOneTurnText, playerTwoTurnText;
+	public Text playerOneAPUpdate, playerTwoAPUpdate;
+	public int APRoll;
 
 	public Animator dieOneTexture, dieTwoTexture;
 	public Sprite d1,d2,d3,d4,d5,d6;
@@ -35,6 +37,7 @@ public class s_EventManager : MonoBehaviour {
 	public AudioClip p1MoveAudio;
 	public AudioClip p2MoveAudio;
 	public AudioClip rollDiceAudio;
+	public AudioClip APup;
 
 	void Awake(){
 		PlayerTurnTextCheck ();
@@ -42,17 +45,28 @@ public class s_EventManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		playerOneAPUpdate.enabled = false;
+		playerTwoAPUpdate.enabled = false;
+
 		Screen.fullScreen = true;
 		TheifManager = this.gameObject.GetComponent<s_TheifManager> ();
 		DiceRoller = this.gameObject.GetComponent<s_DiceRoll> ();
 		//Sets To Default
 		playerTurn = EnumState.playerOne;
 		playerTurnToken = 1;
-		Camera.main.audio.clip = p1MoveAudio;
-		Camera.main.audio.Play ();
+		/*This doesn't want to work on start for whatever reason. Too many other sounds playing from main camera on start? Will invoke for right after first dice roll instead.
+		 * Camera.main.audio.clip = p1MoveAudio;
+		Camera.main.audio.Play ();*/
+		Invoke ("FirstTurnSound", 2.5f);
+
 		RollDice ();
 	}
-	
+
+	void FirstTurnSound(){
+		Camera.main.audio.clip = p1MoveAudio;
+		Camera.main.audio.Play ();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		GoldUpdate ();
@@ -70,12 +84,32 @@ public class s_EventManager : MonoBehaviour {
 		dieOne = DiceRoller.DoRollOne ();
 		dieTwo = DiceRoller.DoRollTwo ();
 
-		playerOneAP = dieOne + dieTwo;
-		playerTwoAP = dieOne + dieTwo;
+		Camera.main.audio.clip = rollDiceAudio;
+		Camera.main.audio.Play ();
+		Invoke ("UpdateAP", 1f);
 
 		dieOneTexture.SetInteger ("diceNumber", dieOne);
 		dieTwoTexture.SetInteger ("diceNumber", dieTwo);
 
+	}
+
+	void UpdateAP(){
+		APRoll = dieOne + dieTwo;
+
+		playerOneAPUpdate.text = "+" + APRoll.ToString();
+		playerTwoAPUpdate.text = "+" + APRoll.ToString();
+		playerOneAPUpdate.CrossFadeAlpha (1f, 0f, false);
+		playerTwoAPUpdate.CrossFadeAlpha (1f, 0f, false);
+		playerOneAPUpdate.enabled = true;
+		playerTwoAPUpdate.enabled = true;
+		playerOneAPUpdate.CrossFadeAlpha (0f, 3f, false);
+		playerTwoAPUpdate.CrossFadeAlpha (0f, 3f, false);
+
+		Camera.main.audio.clip = APup;
+		Camera.main.audio.Play ();
+
+		playerOneAP = APRoll;
+		playerTwoAP = APRoll;
 	}
 
 	void GoldUpdate(){
@@ -145,7 +179,8 @@ public class s_EventManager : MonoBehaviour {
 		}
 	}
 
-	public void RollDicePressed(){
+	/*Old roll dice script
+	 * public void RollDicePressed(){
 		Camera.main.audio.clip = rollDiceAudio;
 		Camera.main.audio.Play ();
 		// Checks Whos Turn It Is,
@@ -158,5 +193,5 @@ public class s_EventManager : MonoBehaviour {
 			playerTwoAP += Random.Range (1,7);
 			playerTwoAP += Random.Range (1,7);
 		}
-	}
+	}*/
 }
