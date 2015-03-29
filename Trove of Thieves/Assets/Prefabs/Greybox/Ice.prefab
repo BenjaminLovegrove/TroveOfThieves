@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1111fc978b2be834188915a71b1aa4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCost: 2
+  itemCost: 1
   noGoldAudio: {fileID: 8300000, guid: 2651cc6e31e017646b362c542caba720, type: 3}
   invalidAudio: {fileID: 8300000, guid: 2651cc6e31e017646b362c542caba720, type: 3}
   objPlaceAudio: {fileID: 8300000, guid: fd35a6b47caff1a4ebcf812922d786c8, type: 3}
