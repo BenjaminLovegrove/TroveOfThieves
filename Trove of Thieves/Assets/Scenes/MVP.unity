@@ -22065,7 +22065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EventManager: {fileID: 0}
   thisButton: {fileID: 0}
-  cost: 3
+  cost: 5
 --- !u!114 &2068747963
 MonoBehaviour:
   m_ObjectHideFlags: 0
