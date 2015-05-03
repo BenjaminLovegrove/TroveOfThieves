@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &6750186
 GameObject:
@@ -9135,8 +9136,8 @@ MonoBehaviour:
   d4: {fileID: 21300000, guid: df50abfff37457a44b9cb66514d27a87, type: 3}
   d5: {fileID: 21300000, guid: af86216b4c8ec654f9c647364be47bb9, type: 3}
   d6: {fileID: 21300000, guid: 5866a51ccd6e9154ca8989c4983819cd, type: 3}
-  p1MoveAudio: {fileID: 8300000, guid: e25d3cbd463a58e478344e7118149b20, type: 3}
-  p2MoveAudio: {fileID: 8300000, guid: 3e119472114ac1041aadb2e87155529f, type: 3}
+  p1MoveAudio: {fileID: 8300000, guid: c9ef8b7f2c28f3e4aa948f00cbf6fb86, type: 3}
+  p2MoveAudio: {fileID: 8300000, guid: 730783de355e2544db872ae327667e74, type: 3}
   rollDiceAudio: {fileID: 8300000, guid: b9e17a6a9846826478a0c3ccda313e52, type: 3}
   APup: {fileID: 8300000, guid: 74948b5a7eb7e2f4aa2900840994dfa5, type: 3}
 --- !u!4 &894565152
@@ -17457,8 +17458,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -20509,7 +20510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60cc889cdc8de63419ccd55b9a6fb62a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noGoldAudio: {fileID: 8300000, guid: 8544edcb7bd2f304db5fe4a75932f34a, type: 3}
+  noGoldAudio: {fileID: 8300000, guid: 976bf863e88ce6a4bbb15ab9180114b3, type: 3}
   coins: {fileID: 8300000, guid: cff8d123b46ab9445943fb86a8133372, type: 3}
   endTurnButton: {fileID: 1716877717}
   endTurnButtonCD: 0
